@@ -17,6 +17,8 @@ public class GravityArc : MonoBehaviour
     private Vector2 collisionPos;
     private bool collided;
 
+    private PlayerGunController.GunDirection gunDirection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,9 +57,10 @@ public class GravityArc : MonoBehaviour
     }
 
 
-    public void SetShotStartAndDirection(Vector3 start, Vector3 direction)
+    public void SetShotStartAndDirection(Vector3 start, Vector3 shotDirection, PlayerGunController.GunDirection gunDirection)
     {
         this.shotStart = start;
-        this.shotDirection = direction.normalized;
+        this.shotDirection = shotDirection.normalized;
+        this.gunDirection = gunDirection;
     }
 }
