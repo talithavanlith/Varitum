@@ -11,8 +11,12 @@ public class change_mouse_icon : MonoBehaviour
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
 
+    
     private void Start()
     {
+        
+        
+                       
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
     void OnMouseEnter()

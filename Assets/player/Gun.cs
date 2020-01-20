@@ -4,29 +4,57 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public object player;
+    private float fireCD;
+    public Transform gravityArcPrefab;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    
     private void FixedUpdate()
     {
-       // fireCD += Time.fixedDeltaTime;
+        rotate_direction();
+
+        Vector3 player_location = Camera.main.WorldToScreenPoint();
+
+
 
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 target = Input.mousePosition;
-
+            fire(transform.position, target);
         }
 
 
     }
 
+    private void rotate_direction()
+    {
+        Vector3 mouse = Input.mousePosition;
+        Vector3 obj = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 direction = mouse - obj;
+        direction.z = 0f;
+        Debug.Log(direction);
+
+        transform.right = direction;
+    }
+
+
 
     private void fire (Vector3 gunpoition, Vector3 target)
     {
 
+        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Vector2 shotEnd = mouseRay.origin + mouseRay.direction;
+
+       
+       
+
+        Transform arc = Instantiate(gravityArcPrefab, transform);
+        //arc.GetComponent<GravityArc>().SetShotStartAndDirection(gunpoition, (Vector3)target-gunpoition );
+         arc.GetComponent<GravityArc>().SetShotStartAndDirection(transform.position, (Vector3)shotEnd - transform.position);
 
 
 
