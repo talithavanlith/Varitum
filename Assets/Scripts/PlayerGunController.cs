@@ -7,8 +7,7 @@ public class PlayerGunController : MonoBehaviour
     private float shotCooldown;
     public Transform gravityArcPrefab;
 
-    public enum GunDirection { UP, DOWN, LEFT, RIGHT };
-    private GunDirection gunDirection;
+    private GravityDirection gunDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -34,16 +33,16 @@ public class PlayerGunController : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            SetGunDirection(GunDirection.UP);
+            SetGunDirection(GravityDirection.UP);
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SetGunDirection(GunDirection.RIGHT);
+            SetGunDirection(GravityDirection.DOWN);
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            SetGunDirection(GunDirection.DOWN);
+            SetGunDirection(GravityDirection.LEFT);
         if (Input.GetKeyDown(KeyCode.Alpha4))
-            SetGunDirection(GunDirection.LEFT);
+            SetGunDirection(GravityDirection.RIGHT);
     }
 
-    public void SetGunDirection(GunDirection direction)
+    public void SetGunDirection(GravityDirection direction)
     {
         gunDirection = direction;
     }

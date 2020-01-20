@@ -17,7 +17,8 @@ public class GravityArc : MonoBehaviour
     private Vector2 collisionPos;
     private bool collided;
 
-    private PlayerGunController.GunDirection gunDirection;
+    private GravityDirection gravityDirection;
+    private InanimateObject collidedObject;
 
     // Start is called before the first frame update
     void Start()
@@ -48,19 +49,26 @@ public class GravityArc : MonoBehaviour
         {
             collisionPos = hit.point;
             collided = true;
+
+            collidedObject = hit.collider.gameObject.GetComponent<InanimateObject>();
+            if (collidedObject)
+            {
+                collidedObject.ApplyGravity(gravityDirection);
+            }
         }
 
         if (collided && Vector2.Distance(shotStart, collisionPos) < Vector2.Distance(shotStart, shotStartPoint))
         {
+            
             Destroy(gameObject);
         }
     }
 
 
-    public void SetShotStartAndDirection(Vector3 start, Vector3 shotDirection, PlayerGunController.GunDirection gunDirection)
+    public void SetShotStartAndDirection(Vector3 start, Vector3 shotDirection, GravityDirection gravityDirection)
     {
         this.shotStart = start;
         this.shotDirection = shotDirection.normalized;
-        this.gunDirection = gunDirection;
+        this.gravityDirection = gravityDirection;
     }
 }
