@@ -17,7 +17,6 @@ public class InanimateObject : MonoBehaviour
         new Vector2(1, 0)
     };
 
-
     private Vector2 gravity;
     private float gravityTimer;
 
@@ -36,7 +35,10 @@ public class InanimateObject : MonoBehaviour
         if (gravityTimer > 0)
             gravityTimer -= Time.deltaTime;
         else
+        {
             gravity = DefaultGravity * GravityScale;
+            gravityTimer = 0;
+        }
 
         rigidbody.velocity = gravity;
     }
@@ -44,7 +46,14 @@ public class InanimateObject : MonoBehaviour
     public void ApplyGravity(GravityDirection direction)
     {
         int axisIndex = (int)direction;
-        gravityTimer = UnscaledGravityTimer / rigidbody.mass;
+        if (gravityTimer <= 0)
+        {
+            gravityTimer = UnscaledGravityTimer / rigidbody.mass;
+        }
+
+        if (direction == GravityDirection.DOWN)
+            gravityTimer = 0;
+
         gravity = GravityDirections[axisIndex] * GravityScale;
     }
 }
