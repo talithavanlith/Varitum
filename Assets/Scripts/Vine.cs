@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Vine : MonoBehaviour
 {
-    public float maxY;
-    public float minY;
+    public float maxX;
+    public float minX;
     public float move;
 
     // Start is called before the first frame update
@@ -17,16 +17,16 @@ public class Vine : MonoBehaviour
     void Update()
     {
         // Change in vertical distance 
-        Vector3 oldPos = transform.position;
+        Vector3 oldPos = transform.localScale;
 
         // Move the game object on the vertical axis
-        if (oldPos.y + move > maxY || oldPos.y + move < minY)
+        if (oldPos.x + move > maxX || oldPos.x + move < minX)
         {
             move = -move;
         }
-        oldPos.y = oldPos.y + move;
+        oldPos.x = oldPos.x + move;
 
-        transform.position = oldPos;
+        transform.localScale = oldPos;
 
     }
 }
