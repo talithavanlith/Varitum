@@ -9,13 +9,15 @@ public class GravityArc : MonoBehaviour
     private Vector3 shotDirection;
     private LineRenderer lineRenderer;
     private const float Speed = 40f;
-    private const float TrailSpeed = 10f;
+    private const float TrailSpeed = 25f;
 
     private float timeAlive;
-    private const float MaxLifetime = 1f;
+    private const float MaxLifetime = 2f;
 
     private Vector2 collisionPos;
     private bool collided;
+
+    private PlayerGunController.GunDirection gunDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -38,25 +40,27 @@ public class GravityArc : MonoBehaviour
 
         lineRenderer.SetPositions(new Vector3[] { shotStartPoint, shotEndPoint });
         lineRenderer.endWidth = Mathf.Min((1f * timeAlive), 0.25f);
-        lineRenderer.startWidth = 0.025f;
-
+        lineRenderer.startWidth = 0.05f;
 
         RaycastHit2D hit = Physics2D.Raycast(shotStartPoint, shotDirection, Vector2.Distance(shotStartPoint, shotEndPoint));
 
         if (hit.collider && !hit.collider.gameObject.CompareTag("Player"))
         {
             collisionPos = hit.point;
-            //    collided = true;
-            Debug.Log("HIT");
+            collided = true;
         }
 
-
+        if (collided && Vector2.Distance(shotStart, collisionPos) < Vector2.Distance(shotStart, shotStartPoint))
+        {
+            Destroy(gameObject);
+        }
     }
 
 
-    public void SetShotStartAndDirection(Vector3 start, Vector3 direction)
+    public void SetShotStartAndDirection(Vector3 start, Vector3 shotDirection, PlayerGunController.GunDirection gunDirection)
     {
         this.shotStart = start;
-        this.shotDirection = direction.normalized;
+        this.shotDirection = shotDirection.normalized;
+        this.gunDirection = gunDirection;
     }
 }
