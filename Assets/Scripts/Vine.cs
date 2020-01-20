@@ -6,20 +6,27 @@ public class Vine : MonoBehaviour
 {
     public float maxY;
     public float minY;
-    private new Rigidbody2D rigidbody;
+    public float move;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(rigidbody.transform.position.y > maxY)
-        {
+        // Change in vertical distance 
+        Vector3 oldPos = transform.position;
 
+        // Move the game object on the vertical axis
+        if (oldPos.y + move > maxY || oldPos.y + move < minY)
+        {
+            move = -move;
         }
+        oldPos.y = oldPos.y + move;
+
+        transform.position = oldPos;
+
     }
 }
