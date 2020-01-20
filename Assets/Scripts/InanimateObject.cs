@@ -36,7 +36,7 @@ public class InanimateObject : MonoBehaviour
         if (gravityTimer > 0)
             gravityTimer -= Time.deltaTime;
         else
-            gravity = DefaultGravity;
+            gravity = DefaultGravity * GravityScale;
 
         rigidbody.velocity = gravity;
     }

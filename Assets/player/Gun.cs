@@ -28,7 +28,6 @@ public class Gun : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 target = Input.mousePosition;
-            fire(transform.position, target);
         }
 
 
@@ -45,22 +44,5 @@ public class Gun : MonoBehaviour
         transform.right = direction;
     }
 
-
-
-    private void fire (Vector3 gunpoition, Vector3 target)
-    {
-
-        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Vector2 shotEnd = mouseRay.origin + mouseRay.direction;
-
-       
-       
-
-        Transform arc = Instantiate(gravityArcPrefab, transform);
-        //arc.GetComponent<GravityArc>().SetShotStartAndDirection(gunpoition, (Vector3)target-gunpoition );
-         arc.GetComponent<GravityArc>().SetShotStartAndDirection(transform.position, (Vector3)shotEnd - transform.position);
-
-
-
-    }
+    
 }
