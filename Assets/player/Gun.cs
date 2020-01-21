@@ -24,15 +24,16 @@ public class Gun : MonoBehaviour
     {
 
         //rotate_direction();
-        //arm_rotate_direction_right();
-        if (faceright)
-        {
-            arm_rotate_direction_right();
-        }
-        else
-        {
-            arm_rotate_direction_left();
-        }
+        arm_rotate_direction_right();
+        //if (faceright)
+        //{
+        //    arm_rotate_direction_right();
+        //}
+        //else
+        //{
+        //    arm_rotate_direction_left();
+        //}
+
         Debug.Log(transform.right.x);
 
         filp();
