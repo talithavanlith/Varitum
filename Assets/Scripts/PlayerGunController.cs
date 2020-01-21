@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerGunController : MonoBehaviour
 {
     private float shotCooldown;
-    public Transform gravityArcPrefab;
+    public Transform gravityShotPrefab;
 
     private GravityDirection gunDirection;
 
@@ -28,8 +28,8 @@ public class PlayerGunController : MonoBehaviour
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector2 shotEnd = mouseRay.origin + mouseRay.direction;
 
-            Transform arc = Instantiate(gravityArcPrefab, transform);
-            arc.GetComponent<GravityArc>().SetShotStartAndDirection(transform.position, (Vector3)shotEnd - transform.position, gunDirection);
+            Transform shot = Instantiate(gravityShotPrefab, transform);
+            shot.GetComponent<GravityShot>().SetShotStartAndDirection(transform.position, (Vector3)shotEnd - transform.position, gunDirection);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
