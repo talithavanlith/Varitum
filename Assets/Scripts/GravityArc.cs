@@ -27,7 +27,7 @@ public class GravityArc : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         timeAlive += Time.deltaTime;
 
@@ -50,6 +50,8 @@ public class GravityArc : MonoBehaviour
             collisionPos = hit.point;
             collided = true;
 
+            CreateReflectedArcFromRayHit(shotDirection, hit);
+
             collidedObject = hit.collider.gameObject.GetComponent<InanimateObject>();
             if (collidedObject)
             {
@@ -62,6 +64,13 @@ public class GravityArc : MonoBehaviour
             
             Destroy(gameObject);
         }
+    }
+
+    private void CreateReflectedArcFromRayHit(Vector2 incidentDirection, RaycastHit2D hit)
+    {
+        Vector2 reflected = incidentDirection - (2 * (Vector2.Dot(incidentDirection, hit.normal)) * hit.normal);
+        Transform arc = Instantiate(transform, transform);
+        arc.GetComponent<GravityArc>().SetShotStartAndDirection(hit.point + 0.25f * reflected, reflected, this.gravityDirection);
     }
 
 
