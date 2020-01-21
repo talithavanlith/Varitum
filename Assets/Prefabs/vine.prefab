@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8789338861108895974}
   - component: {fileID: 8789338861108895975}
   - component: {fileID: 8789338861108895968}
-  - component: {fileID: 7269632504032519431}
+  - component: {fileID: 69495392965850933}
   m_Layer: 0
   m_Name: vine
   m_TagString: Untagged
@@ -92,13 +92,13 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.03}
+  m_Offset: {x: -2.15, y: -0.03}
   m_Size: {x: 4.6, y: 0.54}
   m_Direction: 1
---- !u!114 &7269632504032519431
+--- !u!114 &69495392965850933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,6 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528b45790b59c46f49a859485f795353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxX: 0
-  minX: 0.6
-  move: 0.48
+  maxX: 1.4
+  minX: 0.1
+  move: 0.02
