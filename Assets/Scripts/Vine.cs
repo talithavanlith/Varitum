@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Vine : MonoBehaviour
 {
-    public float maxX;
-    public float minX;
-    public float move;
+    public float maxX = 1.4f;
+    public float minX = 0.1f;
+    public float move = 0.02f;
 
     // Start is called before the first frame update
     void Start()
