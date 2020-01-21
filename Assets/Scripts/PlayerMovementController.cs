@@ -8,6 +8,8 @@ public class PlayerMovementController : MonoBehaviour
     private new Rigidbody2D rigidbody;
     private bool grounded = false;
 
+    public CameraController camera;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -36,7 +38,9 @@ public class PlayerMovementController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = transform.position + new Vector3(Time.deltaTime * Input.GetAxis("Horizontal") * 6, 0);
+        float horizontalMovement = Input.GetAxis("Horizontal");
+        camera.SetMovementDirection(horizontalMovement > 0 ? CameraController.MovementDirection.RIGHT : horizontalMovement < 0 ? CameraController.MovementDirection.LEFT : CameraController.MovementDirection.NONE);
+        transform.position = transform.position + new Vector3(Time.deltaTime * horizontalMovement * 6, 0);
 
         if (Input.GetButton("Jump") && grounded)
         {
