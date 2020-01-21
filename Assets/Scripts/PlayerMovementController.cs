@@ -39,7 +39,16 @@ public class PlayerMovementController : MonoBehaviour
     void FixedUpdate()
     {
         float horizontalMovement = Input.GetAxis("Horizontal");
-        camera.SetMovementDirection(horizontalMovement > 0 ? CameraController.MovementDirection.RIGHT : horizontalMovement < 0 ? CameraController.MovementDirection.LEFT : CameraController.MovementDirection.NONE);
+        //camera.SetMovementDirection(horizontalMovement > 0 ? CameraController.MovementDirection.RIGHT : horizontalMovement < 0 ? CameraController.MovementDirection.LEFT : CameraController.MovementDirection.NONE);
+
+
+        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Vector2 mousePos = mouseRay.origin + mouseRay.direction;
+        if (mousePos.x > transform.position.x)
+            camera.SetMovementDirection(CameraController.MovementDirection.RIGHT);
+        else
+            camera.SetMovementDirection(CameraController.MovementDirection.LEFT);
+
         transform.position = transform.position + new Vector3(Time.deltaTime * horizontalMovement * 6, 0);
 
         if (Input.GetButton("Jump") && grounded)
