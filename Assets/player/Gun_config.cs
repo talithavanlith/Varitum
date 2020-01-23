@@ -29,7 +29,7 @@ public class Gun_config : MonoBehaviour
     }
     private void mousewheel()
     {
-        //Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
+        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             all_drak();
