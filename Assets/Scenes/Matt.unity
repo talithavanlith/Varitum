@@ -1289,6 +1289,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 586096900500353836, guid: 55d86ea3941c1486a9ea66e567a171e8,
+        type: 3}
+      propertyPath: arrowImage
+      value: 
+      objectReference: {fileID: 2800000, guid: 3722881c886384496b1c20b42344858e, type: 3}
+    - target: {fileID: 586096900500353836, guid: 55d86ea3941c1486a9ea66e567a171e8,
+        type: 3}
+      propertyPath: dialImage
+      value: 
+      objectReference: {fileID: 2800000, guid: 620be3c60e3ad48c0bcb69188bce0c96, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d86ea3941c1486a9ea66e567a171e8, type: 3}
 --- !u!1001 &1607499283398348943
