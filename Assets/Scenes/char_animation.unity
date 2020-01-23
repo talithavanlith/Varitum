@@ -230,13 +230,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180498528}
-  m_LocalRotation: {x: 0, y: -0, z: 0.99984324, w: 0.01770817}
+  m_LocalRotation: {x: -0, y: -0, z: 0.97615755, w: -0.2170631}
   m_LocalPosition: {x: -0.041258704, y: -0.0044412687, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1237426532}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 205.073}
 --- !u!1 &242117308
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,11 +261,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242117308}
   m_LocalRotation: {x: 0, y: -0, z: 0.9997069, w: 0.024210548}
-  m_LocalPosition: {x: -0.6805519, y: 0.026590586, z: 0}
+  m_LocalPosition: {x: -0.61034024, y: -0.25929713, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1237426532}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &292736692 stripped
 Transform:
@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 10
+  camera: {fileID: 0}
 --- !u!1 &427547205
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a55401aa246a4d80b69791598e37b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityArcPrefab: {fileID: 2574600385718165163, guid: ce3cff3543d2447d99c7667d1d63d182,
+  gravityShotPrefab: {fileID: 2574600385718165163, guid: ce3cff3543d2447d99c7667d1d63d182,
     type: 3}
 --- !u!1 &488036705
 GameObject:
@@ -552,14 +553,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488036705}
-  m_LocalRotation: {x: 0, y: 0, z: 0.1418707, w: 0.9898852}
+  m_LocalRotation: {x: -0, y: -0, z: 0.107663915, w: 0.99418736}
   m_LocalPosition: {x: 0.60028696, y: -0.000000024351134, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1426595773}
   m_Father: {fileID: 1237426532}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.361001}
 --- !u!1 &498298057
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,14 +584,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498298057}
-  m_LocalRotation: {x: -0, y: -0, z: -0.88542557, w: 0.46478117}
-  m_LocalPosition: {x: 0.5071516, y: -0.009173632, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.25114766, w: 0.9679488}
+  m_LocalPosition: {x: -0.8759227, y: 0.5976498, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1104147865}
-  m_Father: {fileID: 1237426532}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -124.60801}
+  m_Father: {fileID: 1672442877}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -29.091002}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,13 +878,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104147864}
-  m_LocalRotation: {x: -0, y: -0, z: 0.38205233, w: 0.92414063}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7341917, w: 0.67894226}
   m_LocalPosition: {x: 0.5024164, y: 0.03889078, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 498298058}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 44.922}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 94.478004}
 --- !u!4 &1179542461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9082455915740412705, guid: 0ab2301d69d5c4818a3fe6b98584bc51,
@@ -918,11 +919,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488036706}
-  - {fileID: 498298058}
   - {fileID: 180498529}
   - {fileID: 242117309}
   m_Father: {fileID: 1672442877}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 95.33501}
 --- !u!1 &1376780506 stripped
 GameObject:
@@ -1174,6 +1174,8 @@ GameObject:
   - component: {fileID: 1672442876}
   - component: {fileID: 1672442875}
   - component: {fileID: 1672442878}
+  - component: {fileID: 1672442879}
+  - component: {fileID: 1672442880}
   m_Layer: 0
   m_Name: thumbnail_bodyParts2 (1)
   m_TagString: Untagged
@@ -1263,9 +1265,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672442874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4, y: -3.24, z: 0}
+  m_LocalPosition: {x: -1.756, y: -3.184, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 498298058}
   - {fileID: 1237426532}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1284,6 +1287,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Solvers: []
   m_Weight: 1
+--- !u!50 &1672442879
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672442874}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1672442880
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672442874}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.16355145, y: 0.3}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.21, y: 3.17}
+    newSize: {x: 2.21, y: 3.17}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.35, y: 2.68}
+  m_EdgeRadius: 0
 --- !u!4 &1731346036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9082455915740412705, guid: 0ab2301d69d5c4818a3fe6b98584bc51,
