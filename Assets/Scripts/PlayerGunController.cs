@@ -70,6 +70,11 @@ public class PlayerGunController : MonoBehaviour
             shot.GetComponent<GravityShot>().SetShotStartAndDirection(transform.position, (Vector3)shotEnd - transform.position, gunDirection);
         }
 
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        int direction = scroll > 0 ? -1 : scroll < 0 ? 1 : 0;
+
+        gunDirection = (GravityDirection) (((int)gunDirection + direction + 4) % 4);
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
             SetGunDirection(GravityDirection.UP);
         if (Input.GetKeyDown(KeyCode.Alpha2))

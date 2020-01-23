@@ -55,6 +55,5 @@ public class InanimateObject : MonoBehaviour
             gravityTimer = 0;
 
         gravity = GravityDirections[axisIndex] * GravityScale;
-        Debug.Log(gravity);
     }
 }

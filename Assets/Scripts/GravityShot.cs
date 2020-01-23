@@ -92,7 +92,6 @@ public class GravityShot : MonoBehaviour
             else break; // Object hit unaffected
         }
 
-        Debug.Log(reflectCount + " Reflections");
         lineRenderer.positionCount = linePoints.Count;
         lineRenderer.SetPositions(linePoints.ToArray());
         lineRenderer.endWidth = 0.08f;

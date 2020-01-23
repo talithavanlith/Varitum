@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(player.position.x + xOffset, 0, -10);
+        transform.position = new Vector3(player.position.x + xOffset, player.position.y + 1, -10);
 
         if (movementCooldown > 0)
         {
@@ -36,11 +36,11 @@ public class CameraController : MonoBehaviour
 
         if (movementDirection == MovementDirection.RIGHT && xOffset < 3)
         {
-            xOffset += Time.deltaTime * 3;
+            xOffset += Time.deltaTime * 5;
         }
         else if (movementDirection == MovementDirection.LEFT && xOffset > -3)
         {
-            xOffset -= Time.deltaTime * 3;
+            xOffset -= Time.deltaTime * 5;
         }
     }
 
