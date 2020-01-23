@@ -12,9 +12,9 @@ public class InanimateObject : MonoBehaviour
     private static Vector2[] GravityDirections =
     {
         new Vector2(0, 1),
+        new Vector2(1, 0),
         DefaultGravity,
         new Vector2(-1, 0),
-        new Vector2(1, 0)
     };
 
     private Vector2 gravity;
@@ -55,5 +55,6 @@ public class InanimateObject : MonoBehaviour
             gravityTimer = 0;
 
         gravity = GravityDirections[axisIndex] * GravityScale;
+        Debug.Log(gravity);
     }
 }

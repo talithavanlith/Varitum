@@ -58,7 +58,7 @@ public class Vine : MonoBehaviour
         {
 
             //    // Destroy the projectile game object
-            //    Destroy(other.gameObject);
+           Destroy(other.gameObject);
 
         }
         else
