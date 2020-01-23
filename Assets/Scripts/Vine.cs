@@ -6,13 +6,16 @@ public class Vine : MonoBehaviour
 {
     public float maxX = 1.4f;
     public float minX = 0.1f;
+    
     public float move = 0.02f;
 
+    private float oldX;
     private int stop = 1;
 
     // Start is called before the first frame update
     void Start()
     {
+        oldX = maxX;
     }
 
     // Update is called once per frame
@@ -26,7 +29,8 @@ public class Vine : MonoBehaviour
         {
             move = -move;
         }
-        oldPos.x = oldPos.x + move * stop;
+        oldPos.x = oldPos.x + move;
+        //oldPos.x = oldPos.x + move * stop;
 
         transform.localScale = oldPos;
 
@@ -47,7 +51,8 @@ public class Vine : MonoBehaviour
         }
         else
         {
-            stop = 0;
+            //stop = 0;
+            maxX = transform.localScale.x;
         }
     }
 
@@ -58,12 +63,13 @@ public class Vine : MonoBehaviour
         {
 
             //    // Destroy the projectile game object
-           Destroy(other.gameObject);
+           //Destroy(other.gameObject);
 
         }
         else
         {
-            stop = 1;
+            //stop = 1;
+            maxX = oldX;
         }
     }
 
