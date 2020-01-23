@@ -49,14 +49,14 @@ public class CameraController : MonoBehaviour
         if (direction == MovementDirection.NONE)
             return;
 
-        //if (direction != this.movementDirection)
-        //{
-        //    if (movementCooldown > 0)
-        //        spamMove = true;
+        if (direction != this.movementDirection)
+        {
+            if (movementCooldown > 0)
+                spamMove = true;
 
-        //    movementCooldown = 0.75f;
+            movementCooldown = 0.75f;
 
-        //}
+        }
 
         this.movementDirection = direction;
     }

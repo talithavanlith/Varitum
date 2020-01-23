@@ -14,8 +14,7 @@ public class PlayerGunController : MonoBehaviour
     public Texture dialImage;
 
     private Vector2 selectPos;
-    private float cosAngle;
-    // Start is called before the first frame update
+
     void Start()
     {
         
@@ -35,10 +34,30 @@ public class PlayerGunController : MonoBehaviour
         {
             Vector2 selectDirection = (Vector2)Input.mousePosition - selectPos;
 
-            float cosAngle = Mathf.Acos(Vector2.Dot(selectDirection, new Vector2(0, 1)));
-            float determinant = selectDirection.x;
-            this.cosAngle = Mathf.Atan2(determinant, Vector2.Dot(selectDirection, new Vector2(0, 1)));
-            this.cosAngle = cosAngle;
+
+            if (Mathf.Abs(selectDirection.x) > Mathf.Abs(selectDirection.y))
+            {
+                if (selectDirection.x > 0)
+                {
+                    gunDirection = GravityDirection.RIGHT;
+                }
+                else if (selectDirection.x < 0)
+                {
+                    gunDirection = GravityDirection.LEFT;
+                }
+            }
+            else
+            {
+                if (selectDirection.y > 0)
+                {
+                    gunDirection = GravityDirection.UP;
+                }
+                else if (selectDirection.y < 0)
+                {
+                    gunDirection = GravityDirection.DOWN;
+                }
+            }
+            
         }
         else if (Input.GetMouseButtonDown(0) && shotCooldown <= 0)
         {
@@ -54,12 +73,11 @@ public class PlayerGunController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
             SetGunDirection(GravityDirection.UP);
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SetGunDirection(GravityDirection.DOWN);
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-            SetGunDirection(GravityDirection.LEFT);
-        if (Input.GetKeyDown(KeyCode.Alpha4))
             SetGunDirection(GravityDirection.RIGHT);
-
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SetGunDirection(GravityDirection.DOWN);
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+            SetGunDirection(GravityDirection.LEFT);
     }
 
     public void SetGunDirection(GravityDirection direction)
@@ -81,16 +99,9 @@ public class PlayerGunController : MonoBehaviour
 
             if (Input.GetMouseButton(1))
             {
-                GUI.Label(new Rect(200, 200, 100, 50), cosAngle + " angle");
                 GUI.DrawTexture(new Rect(selectPos.x - 50, Screen.height - selectPos.y - 50, 100, 100), dialImage, ScaleMode.ScaleToFit);
 
-                Texture2D t = new Texture2D(1, 1);
-                t.SetPixel(0, 0, Color.red);
-                t.Apply();
-
                 Vector2 pivotPoint = new Vector2(selectPos.x, Screen.height - selectPos.y);
-
-                GUI.DrawTexture(new Rect(pivotPoint, new Vector2(10, 10)), t);
 
                 GUIUtility.RotateAroundPivot((int) gunDirection * 90, pivotPoint);
                 GUI.DrawTexture(new Rect(selectPos.x - 50, Screen.height - selectPos.y - 50, 100, 100), arrowImage, ScaleMode.ScaleToFit);
