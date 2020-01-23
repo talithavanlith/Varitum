@@ -7,7 +7,8 @@ public class PlayerGunController : MonoBehaviour
     private float shotCooldown;
     public Transform gravityShotPrefab;
 
-    private GravityDirection gunDirection;
+    //set defult
+     private static GravityDirection gunDirection=GravityDirection.DOWN;
 
 
     public Texture arrowImage;
@@ -85,7 +86,7 @@ public class PlayerGunController : MonoBehaviour
             SetGunDirection(GravityDirection.LEFT);
     }
 
-    public void SetGunDirection(GravityDirection direction)
+    public static void SetGunDirection(GravityDirection direction)
     {
         gunDirection = direction;
     }
