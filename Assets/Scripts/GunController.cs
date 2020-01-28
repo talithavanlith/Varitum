@@ -39,5 +39,6 @@ public class GunController : MonoBehaviour
         GravityShot shot = new GameObject().AddComponent<GravityShot>();
         shot.gameObject.name = "Shot (" + m_gravityDirection + ")";
         shot.InitShot(transform.position, clickPos - transform.position, m_gravityDirection);
+        shot.transform.position = new Vector3(0, 0, -2);
     }
 }
