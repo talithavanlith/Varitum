@@ -8,21 +8,48 @@ public class GravityShot : MonoBehaviour
     private static int MaxReflections = 5;
     private static int LayerMask = 1 << 8;
     private static string ReflectorTag = "Reflector";
-    private static float ShotSpeed = 70f;
+    private static float ShotSpeed = 5f;
+    private static float TrailOffset = 1f;
 
     private Vector3 m_shotStart, m_shotDirection;
     private GravityDirection m_gravityDirection;
     private float m_tValue; // distance of shot along ray
+
+    private float m_startWidth = 0.2f;
+    private float m_endWidth = 0.05f;
+    private float m_opacity = 0.3f;
+    private bool m_hit = false;
 
     private LineRenderer lineRenderer;
 
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Unlit/Color"));
+        lineRenderer.material.color = Color.red;
+        //Color c1 = Color.white;
+        //Color c2 = new Color(1, 1, 1, 0);
+        //lineRenderer.SetColors(Color.red, Color.black);
+        //lineRenderer.SetColors(c1, c2);
+
     }
 
     void Update()
     {
+
+        //if (m_hit && m_endWidth > 0)
+        //m_endWidth -= Time.deltaTime * 0.2f;
+        //else
+        //m_endWidth = 0;
+
+        //if (m_opacity > 0 && m_hit)
+        {
+            //m_opacity -= 0.1f * Time.deltaTime;
+        }
+        //else
+            //Destroy(gameObject);
+
+        m_hit = false;
         ConstructLines();
 
         m_tValue += ShotSpeed * Time.deltaTime;
@@ -34,7 +61,7 @@ public class GravityShot : MonoBehaviour
     void TempKill()
     {
         timeAlive += Time.deltaTime;
-        if (timeAlive > 1f)
+        if (timeAlive > 10f)
             Destroy(gameObject);
     }
 
@@ -42,30 +69,44 @@ public class GravityShot : MonoBehaviour
     private void ConstructLines()
     {
         List<Vector3> linePoints = new List<Vector3>();
-        linePoints.Add(m_shotStart);
+        //float trailTValue = Ma
 
         Vector2 point = m_shotStart;
         Vector2 direction = m_shotDirection;
         RaycastHit2D hit;
 
         int reflectionCount = 0;
-        float tValueCount = 0;
+        float headTValueCount = 0;
 
         while (reflectionCount <= MaxReflections)
         {
             direction.Normalize();
             hit = Physics2D.Raycast(point, direction, 100, LayerMask);
 
+            if (reflectionCount == 0)
+            {
+                //if (hit.collider)
+                //{
+                    //point = point + Mathf.Max(0, m_tValue - TrailOffset + 0.01f) * direction;
+                //}
+
+                //if (m_tValue - TrailOffset < (hit.point - point).magnitude)
+                    linePoints.Add(point);
+                //else
+                    //direction = Vector2.Reflect(direction, hit.normal);
+            }
+
             // Nothing hit
             if (!hit.collider)
             {
-                linePoints.Add(point + (m_tValue - tValueCount) * direction);
+                linePoints.Add(point + (m_tValue - headTValueCount) * direction);
+                m_hit = true;
                 break;
             }
 
             float magnitude = (hit.point - point).magnitude;
-            linePoints.Add(point + direction * Mathf.Min((m_tValue - tValueCount), magnitude));
-            tValueCount += Mathf.Min((m_tValue - tValueCount), magnitude);
+            linePoints.Add(point + direction * Mathf.Min((m_tValue - headTValueCount), magnitude));
+            headTValueCount += Mathf.Min((m_tValue - headTValueCount), magnitude);
             // Inanimate object hit
             /*InanimateObject obj = hit.collider.gameObject.GetComponent<InanimateObject>();
             if (obj)
@@ -76,7 +117,7 @@ public class GravityShot : MonoBehaviour
             }*/
 
             // Reflector hit
-            /*else*/ if (hit.collider.gameObject.CompareTag(ReflectorTag) && tValueCount < m_tValue)
+            /*else*/ if (hit.collider.gameObject.CompareTag(ReflectorTag) && headTValueCount < m_tValue)
             {
                 reflectionCount++;
 
@@ -91,21 +132,8 @@ public class GravityShot : MonoBehaviour
         lineRenderer.SetPositions(linePoints.ToArray());
 
 
-        lineRenderer.endWidth = 0.05f;
-        lineRenderer.startWidth = 0.2f;
-        //Gradient gradient = new Gradient();
-        //gradient.SetKeys(new GradientColorKey[]
-        //{
-        //    new GradientColorKey(new Color(0x72, 0xD9, 0xEC), 0.9f),
-        //    //new GradientColorKey(new Color(0xEC, 0x85, 0x72), 0.1f)
-        //},
-        //new GradientAlphaKey[]
-        //{
-        //    new GradientAlphaKey(1.0f, 0.5f),
-        //});
-        //lineRenderer.colorGradient = gradient;
-        //lineRenderer.material = new Material(Shader.Find("Standard"));
-        //lineRenderer.material.color = new Color(0x72, 0xD9, 0xEC);
+        lineRenderer.endWidth = m_startWidth;
+        lineRenderer.startWidth = m_endWidth;
     }
 
     internal void InitShot(Vector3 shotStart, Vector3 shotDirection, GravityDirection gravityDirection)
