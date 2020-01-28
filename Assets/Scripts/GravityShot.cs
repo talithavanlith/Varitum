@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 
+[RequireComponent(typeof(LineRenderer))]
 public class GravityShot : MonoBehaviour
 {
     // Use this for initialization
@@ -16,7 +17,7 @@ public class GravityShot : MonoBehaviour
 
     }
 
-    void InitShot(Vector3 position, Vector3 shotDirection, GravityDirection gravityDirection)
+    internal void InitShot(Vector3 position, Vector3 shotDirection, GravityDirection gravityDirection)
     {
         throw new NotImplementedException();
     }
