@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{A77DEB61-50BA-3D2B-BA85-CD07C2DB2C66}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerGunController.cs">
+    <Files>
+      <File FileName="Assets/player/Gun.cs" Line="148" Column="1" NotebookId="1" />
+      <File FileName="Assets/player/GravityArc1.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/PlayerGunController.cs" Line="103" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/GravityArc.cs" Line="1" Column="1" NotebookId="1" />
+    </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="127" Y="130" Width="948" Height="1237">
+        <Files>
+          <File FileName="Assets/player/Gun_config.cs" Line="32" Column="9" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Demo" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="player" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="PlayerGunController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4c2674c4-8a99-4af2-881a-b5aeecf90d32" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
