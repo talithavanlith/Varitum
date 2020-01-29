@@ -61,6 +61,7 @@ public class GravityShot : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
         ContactPoint2D contact = collision.GetContact(0);
         if(contact.collider.gameObject.CompareTag(ReflectorTag))
         {
@@ -70,6 +71,7 @@ public class GravityShot : MonoBehaviour
         else
         {
             m_shotDirection = Vector3.zero;
+            GetComponent<Collider2D>().enabled = false;
         }
     }
 
