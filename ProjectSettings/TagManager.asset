@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Reflector
+  - WALLJUMP
+  - Ground
   layers:
   - Default
   - TransparentFX
