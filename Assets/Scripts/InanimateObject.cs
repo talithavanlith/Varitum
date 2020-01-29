@@ -19,6 +19,7 @@ public class InanimateObject : MonoBehaviour
     private float gravityTimer;
 
     private new Rigidbody2D rigidbody;
+    private CircularTimer timer;
 
     void Start()
     {
@@ -26,10 +27,14 @@ public class InanimateObject : MonoBehaviour
 
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.gravityScale = 0;
+        timer = Instantiate(Resources.Load("CircularTimer", typeof(CircularTimer))) as CircularTimer;
+        timer.transform.parent = transform;
+        timer.transform.localPosition = Vector3.zero;
     }
 
     void FixedUpdate()
     {
+        timer.SetValue(gravityTimer / UnscaledGravityTimer);
         if (gravityTimer > 0)
             gravityTimer -= Time.deltaTime;
         else
