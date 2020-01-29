@@ -15,6 +15,7 @@ public class Animations : MonoBehaviour
     private Transform player_t;
     private float fireCD;
     private Animator anim;
+    private Vector3 player_localscale;
    // public Transform gravityArcPrefab;
 
 
@@ -34,9 +35,11 @@ public class Animations : MonoBehaviour
     {
         //Camera.main.WorldToScreenPoint( Input.mousePosition)
 
-        arm_rotate_direction_right();
+      
         Debug.DrawLine(arm_t.position, Camera.main.WorldToScreenPoint(transform.position), Color.red);
         Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint( Input.mousePosition), Color.green);
+        //Debug.Log("mouse postion: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        Debug.Log(arm_t.position.x+ "  :  ");
         //play animation
 
       float  moveHorizontal = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
@@ -44,11 +47,33 @@ public class Animations : MonoBehaviour
         if (moveHorizontal != 0)
         {
             anim.SetBool("isRunning",true);
-            Debug.Log("running");
+          //  Debug.Log("running");
         }
         else
         {
             anim.SetBool("isRunning", false);
+        }
+
+        if (arm_t.position.x <= Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
+        {
+            arm_rotate_direction_right();
+            if (faceright!=true) {
+                player_localscale = player.transform.localScale;
+                player_localscale.x = 1f;
+                faceright = true;
+                player.transform.localScale = player_localscale;
+            }
+        }
+        else
+        {
+            arm_rotate_direction_left();
+            if (faceright == true)
+            {
+                player_localscale = player.transform.localScale;
+                player_localscale.x = -1f;
+                faceright = false;
+                player.transform.localScale = player_localscale;
+            }
         }
 
 
@@ -68,6 +93,18 @@ public class Animations : MonoBehaviour
         //Debug.Log(direction);
         // arm_t.RotateAround(p2,new Vector3(0,0,1),5);
         arm_t.right = direction;
+    }
+    private void arm_rotate_direction_left()
+    {
+        //Vector3 p2 = player_t.position;
+        Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Vector3 obj = Camera.main.WorldToScreenPoint(arm_t.position);
+        Vector3 direction = mouse - arm_t.position;
+        direction.z = 0f;
+        //Debug.Log(direction);
+        // arm_t.RotateAround(p2,new Vector3(0,0,1),5);
+        arm_t.right = -direction;
     }
 
 
