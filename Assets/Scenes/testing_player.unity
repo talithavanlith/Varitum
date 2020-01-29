@@ -282,7 +282,9 @@ MonoBehaviour:
   acceleration: 1.2
   maxspeed: 10
   jumpforce: 5
+  jumptime: 0.35
   isGrounded: 0
+  highjumpvalue: 0.4
   MovementSmoothing: 0.05
 --- !u!50 &199290625
 Rigidbody2D:
@@ -796,8 +798,8 @@ MonoBehaviour:
   - {fileID: 310628677}
   - {fileID: 592897787}
   m_Bounds:
-    m_Center: {x: 1.3226436, y: 0.7352408, z: 0}
-    m_Extent: {x: 1.8946272, y: 1.4996853, z: 0}
+    m_Center: {x: 1.2227937, y: 0.21455842, z: 0}
+    m_Extent: {x: 1.4574145, y: 0.39827198, z: 0}
   m_UseBatching: 1
 --- !u!95 &1490984999
 Animator:

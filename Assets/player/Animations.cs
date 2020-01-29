@@ -39,11 +39,12 @@ public class Animations : MonoBehaviour
         Debug.DrawLine(arm_t.position, Camera.main.WorldToScreenPoint(transform.position), Color.red);
         Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint( Input.mousePosition), Color.green);
         //Debug.Log("mouse postion: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        Debug.Log(arm_t.position.x+ "  :  ");
+       // Debug.Log(arm_t.position.x+ "  :  ");
         //play animation
 
-      float  moveHorizontal = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
-
+      
+        //check if is running 
+        float  moveHorizontal = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
         if (moveHorizontal != 0)
         {
             anim.SetBool("isRunning",true);
@@ -54,7 +55,12 @@ public class Animations : MonoBehaviour
             anim.SetBool("isRunning", false);
         }
 
-        if (arm_t.position.x <= Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
+
+        //testing
+        arm_rotate_direction_right();
+
+        //filp
+       /* if (arm_t.position.x <= Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
         {
             arm_rotate_direction_right();
             if (faceright!=true) {
@@ -74,7 +80,7 @@ public class Animations : MonoBehaviour
                 faceright = false;
                 player.transform.localScale = player_localscale;
             }
-        }
+        }*/
 
 
     }
