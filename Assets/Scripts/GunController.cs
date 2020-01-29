@@ -4,6 +4,7 @@ using System.Collections;
 public class GunController : MonoBehaviour
 {
     private GravityDirection m_gravityDirection;
+    public GravityShot gravityShotPrefab;
 
     void Start()
     {
@@ -36,9 +37,9 @@ public class GunController : MonoBehaviour
         Vector3 clickPos = mouseRay.origin + mouseRay.direction;
 
         // Create shot object
-        GravityShot shot = new GameObject().AddComponent<GravityShot>();
+        GravityShot shot = Instantiate(gravityShotPrefab);
         shot.gameObject.name = "Shot (" + m_gravityDirection + ")";
-        shot.InitShot(transform.position, clickPos - transform.position, m_gravityDirection);
-        shot.transform.position = new Vector3(0, 0, -2);
+        shot.InitShot(clickPos - transform.position, m_gravityDirection);
+        shot.transform.position = transform.position;
     }
 }

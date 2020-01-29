@@ -2,121 +2,82 @@
 using System;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(LineRenderer))]
 public class GravityShot : MonoBehaviour
 {
-    private static int MaxReflections = 5;
     private static int LayerMask = 1 << 8;
     private static string ReflectorTag = "Reflector";
-    private static float ShotSpeed = 70f;
+    private static float ShotSpeed = 20f;
 
-    private Vector3 m_shotStart, m_shotDirection;
+    private Vector3 m_shotDirection;
     private GravityDirection m_gravityDirection;
-    private float m_tValue; // distance of shot along ray
 
-    private LineRenderer lineRenderer;
+    private float m_timeAlive;
+
 
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
+        //ParticleSystem ps = GetComponent<ParticleSystem>();
+        //var trails = ps.trails;
+        //trails.enabled = true;
+        //trails.ratio = 0.5f;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        ConstructLines();
-
-        m_tValue += ShotSpeed * Time.deltaTime;
-
-        TempKill();
-    }
-
-    float timeAlive;
-    void TempKill()
-    {
-        timeAlive += Time.deltaTime;
-        if (timeAlive > 1f)
+        m_timeAlive += Time.deltaTime;
+        if (m_timeAlive > 5f)
             Destroy(gameObject);
+
+        //m_shotDirection.Normalize();
+
+        //Vector3 prevPos = transform.position;
+
+        transform.position += m_shotDirection.normalized * ShotSpeed * Time.deltaTime;
+
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, m_shotDirection, 2, LayerMask);
+
+        //RaycastHit2D checkHit = Physics2D.Raycast(transform.position, -m_shotDirection, (prevPos - transform.position).magnitude);
+        //if (checkHit.collider)
+        //    hit = checkHit;
+
+        //if (hit.collider)
+        //{
+        //    Debug.Log(((Vector2)transform.position - hit.point).magnitude);
+        //    if (hit.collider.gameObject.CompareTag(ReflectorTag))
+        //    {
+        //        m_shotDirection = Vector2.Reflect(m_shotDirection, hit.normal);
+
+        //        transform.position = (Vector3)hit.point + 0.2f * m_shotDirection;
+        //    }
+        //    else
+        //    {
+        //        GetComponent<Renderer>().enabled = false;
+        //        m_shotDirection = Vector2.zero;
+        //    }
+        //}
+        //Debug.DrawRay(transform.position, m_shotDirection, Color.green);
+
     }
 
-
-    private void ConstructLines()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        List<Vector3> linePoints = new List<Vector3>();
-        linePoints.Add(m_shotStart);
-
-        Vector2 point = m_shotStart;
-        Vector2 direction = m_shotDirection;
-        RaycastHit2D hit;
-
-        int reflectionCount = 0;
-        float tValueCount = 0;
-
-        while (reflectionCount <= MaxReflections)
+        ContactPoint2D contact = collision.GetContact(0);
+        if(contact.collider.gameObject.CompareTag(ReflectorTag))
         {
-            direction.Normalize();
-            hit = Physics2D.Raycast(point, direction, 100, LayerMask);
-
-            // Nothing hit
-            if (!hit.collider)
-            {
-                linePoints.Add(point + (m_tValue - tValueCount) * direction);
-                break;
-            }
-
-            float magnitude = (hit.point - point).magnitude;
-            linePoints.Add(point + direction * Mathf.Min((m_tValue - tValueCount), magnitude));
-            tValueCount += Mathf.Min((m_tValue - tValueCount), magnitude);
-            // Inanimate object hit
-            /*InanimateObject obj = hit.collider.gameObject.GetComponent<InanimateObject>();
-            if (obj)
-            {
-                // TODO: Store object to affect it after animation is complete
-                obj.ApplyGravity(gravityDirection);
-                break;
-            }*/
-
-            // Reflector hit
-            /*else*/ if (hit.collider.gameObject.CompareTag(ReflectorTag) && tValueCount < m_tValue)
-            {
-                reflectionCount++;
-
-                direction = Vector2.Reflect(direction, hit.normal);
-                point = hit.point + 0.01f * direction;
-                //tValueCount += magnitude;
-            }
-            else break; // Object hit unaffected
+            m_shotDirection = Vector2.Reflect(m_shotDirection, contact.normal);
+            m_shotDirection.Normalize();
         }
-
-        lineRenderer.positionCount = linePoints.Count;
-        lineRenderer.SetPositions(linePoints.ToArray());
-
-
-        lineRenderer.endWidth = 0.05f;
-        lineRenderer.startWidth = 0.2f;
-        //Gradient gradient = new Gradient();
-        //gradient.SetKeys(new GradientColorKey[]
-        //{
-        //    new GradientColorKey(new Color(0x72, 0xD9, 0xEC), 0.9f),
-        //    //new GradientColorKey(new Color(0xEC, 0x85, 0x72), 0.1f)
-        //},
-        //new GradientAlphaKey[]
-        //{
-        //    new GradientAlphaKey(1.0f, 0.5f),
-        //});
-        //lineRenderer.colorGradient = gradient;
-        //lineRenderer.material = new Material(Shader.Find("Standard"));
-        //lineRenderer.material.color = new Color(0x72, 0xD9, 0xEC);
+        else
+        {
+            m_shotDirection = Vector3.zero;
+        }
     }
 
-    internal void InitShot(Vector3 shotStart, Vector3 shotDirection, GravityDirection gravityDirection)
+    internal void InitShot(Vector3 shotDirection, GravityDirection gravityDirection)
     {
-        m_shotStart = shotStart;
-        m_shotStart.z = 0;
-
-        m_shotDirection = shotDirection.normalized;
+        m_shotDirection = shotDirection;
         m_shotDirection.z = 0;
 
         m_gravityDirection = gravityDirection;
-        m_tValue = 0;
     }
 }
