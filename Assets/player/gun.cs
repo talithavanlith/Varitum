@@ -36,32 +36,36 @@ public class gun : MonoBehaviour
         moveVertical = Input.GetKey(KeyCode.W)?1:Input.GetKey(KeyCode.S)?-1:0;
         moveHorizontal= Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
         movement = new Vector2(moveHorizontal,0f);
-
         //jump
         //jump if isgrounded
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rigibody.AddForce(new Vector2(0f, jumpforce), ForceMode2D.Impulse);
         }
+
     }
     private void FixedUpdate()
     {
-
+        //horizontal move
         Vector3 targetVelocity = new Vector2(moveHorizontal*maxspeed,rigibody.velocity.y);
-
         rigibody.velocity = Vector3.SmoothDamp(rigibody.velocity,targetVelocity,ref zero_Velocity,MovementSmoothing);
 
-        //horizontal move
-       /* if (rigibody.velocity.x<0 && rigibody.velocity.x>-6)
-        {
-            rigibody.AddForce(movement*20f*acceleration);
-        }else if (rigibody.velocity.x < 6 && rigibody.velocity.x > 0)
-        {
-            rigibody.AddForce(movement * 20f * acceleration);
-        }*/
 
         
 
-      //  rigibody.AddForce(movement*10F*speed);
+
+        //Debug.Log("player velocity"+rigibody.velocity);
+        //horizontal move
+        /* if (rigibody.velocity.x<0 && rigibody.velocity.x>-6)
+         {
+             rigibody.AddForce(movement*20f*acceleration);
+         }else if (rigibody.velocity.x < 6 && rigibody.velocity.x > 0)
+         {
+             rigibody.AddForce(movement * 20f * acceleration);
+         }*/
+
+
+
+        //  rigibody.AddForce(movement*10F*speed);
     }
 }
