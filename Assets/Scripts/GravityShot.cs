@@ -2,149 +2,82 @@
 using System;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(LineRenderer))]
 public class GravityShot : MonoBehaviour
 {
-    private static int MaxReflections = 5;
     private static int LayerMask = 1 << 8;
     private static string ReflectorTag = "Reflector";
-    private static float ShotSpeed = 5f;
-    private static float TrailOffset = 1f;
+    private static float ShotSpeed = 20f;
 
-    private Vector3 m_shotStart, m_shotDirection;
+    private Vector3 m_shotDirection;
     private GravityDirection m_gravityDirection;
-    private float m_tValue; // distance of shot along ray
 
-    private float m_startWidth = 0.2f;
-    private float m_endWidth = 0.05f;
-    private float m_opacity = 0.3f;
-    private bool m_hit = false;
+    private float m_timeAlive;
 
-    private LineRenderer lineRenderer;
 
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.material = new Material(Shader.Find("Unlit/Color"));
-        lineRenderer.material.color = Color.red;
-        //Color c1 = Color.white;
-        //Color c2 = new Color(1, 1, 1, 0);
-        //lineRenderer.SetColors(Color.red, Color.black);
-        //lineRenderer.SetColors(c1, c2);
-
+        //ParticleSystem ps = GetComponent<ParticleSystem>();
+        //var trails = ps.trails;
+        //trails.enabled = true;
+        //trails.ratio = 0.5f;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-
-        //if (m_hit && m_endWidth > 0)
-        //m_endWidth -= Time.deltaTime * 0.2f;
-        //else
-        //m_endWidth = 0;
-
-        //if (m_opacity > 0 && m_hit)
-        {
-            //m_opacity -= 0.1f * Time.deltaTime;
-        }
-        //else
-            //Destroy(gameObject);
-
-        m_hit = false;
-        ConstructLines();
-
-        m_tValue += ShotSpeed * Time.deltaTime;
-
-        TempKill();
-    }
-
-    float timeAlive;
-    void TempKill()
-    {
-        timeAlive += Time.deltaTime;
-        if (timeAlive > 10f)
+        m_timeAlive += Time.deltaTime;
+        if (m_timeAlive > 5f)
             Destroy(gameObject);
+
+        //m_shotDirection.Normalize();
+
+        //Vector3 prevPos = transform.position;
+
+        transform.position += m_shotDirection.normalized * ShotSpeed * Time.deltaTime;
+
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, m_shotDirection, 2, LayerMask);
+
+        //RaycastHit2D checkHit = Physics2D.Raycast(transform.position, -m_shotDirection, (prevPos - transform.position).magnitude);
+        //if (checkHit.collider)
+        //    hit = checkHit;
+
+        //if (hit.collider)
+        //{
+        //    Debug.Log(((Vector2)transform.position - hit.point).magnitude);
+        //    if (hit.collider.gameObject.CompareTag(ReflectorTag))
+        //    {
+        //        m_shotDirection = Vector2.Reflect(m_shotDirection, hit.normal);
+
+        //        transform.position = (Vector3)hit.point + 0.2f * m_shotDirection;
+        //    }
+        //    else
+        //    {
+        //        GetComponent<Renderer>().enabled = false;
+        //        m_shotDirection = Vector2.zero;
+        //    }
+        //}
+        //Debug.DrawRay(transform.position, m_shotDirection, Color.green);
+
     }
 
-
-    private void ConstructLines()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        List<Vector3> linePoints = new List<Vector3>();
-        //float trailTValue = Ma
-
-        Vector2 point = m_shotStart;
-        Vector2 direction = m_shotDirection;
-        RaycastHit2D hit;
-
-        int reflectionCount = 0;
-        float headTValueCount = 0;
-
-        while (reflectionCount <= MaxReflections)
+        ContactPoint2D contact = collision.GetContact(0);
+        if(contact.collider.gameObject.CompareTag(ReflectorTag))
         {
-            direction.Normalize();
-            hit = Physics2D.Raycast(point, direction, 100, LayerMask);
-
-            if (reflectionCount == 0)
-            {
-                //if (hit.collider)
-                //{
-                    //point = point + Mathf.Max(0, m_tValue - TrailOffset + 0.01f) * direction;
-                //}
-
-                //if (m_tValue - TrailOffset < (hit.point - point).magnitude)
-                    linePoints.Add(point);
-                //else
-                    //direction = Vector2.Reflect(direction, hit.normal);
-            }
-
-            // Nothing hit
-            if (!hit.collider)
-            {
-                linePoints.Add(point + (m_tValue - headTValueCount) * direction);
-                m_hit = true;
-                break;
-            }
-
-            float magnitude = (hit.point - point).magnitude;
-            linePoints.Add(point + direction * Mathf.Min((m_tValue - headTValueCount), magnitude));
-            headTValueCount += Mathf.Min((m_tValue - headTValueCount), magnitude);
-            // Inanimate object hit
-            /*InanimateObject obj = hit.collider.gameObject.GetComponent<InanimateObject>();
-            if (obj)
-            {
-                // TODO: Store object to affect it after animation is complete
-                obj.ApplyGravity(gravityDirection);
-                break;
-            }*/
-
-            // Reflector hit
-            /*else*/ if (hit.collider.gameObject.CompareTag(ReflectorTag) && headTValueCount < m_tValue)
-            {
-                reflectionCount++;
-
-                direction = Vector2.Reflect(direction, hit.normal);
-                point = hit.point + 0.01f * direction;
-                //tValueCount += magnitude;
-            }
-            else break; // Object hit unaffected
+            m_shotDirection = Vector2.Reflect(m_shotDirection, contact.normal);
+            m_shotDirection.Normalize();
         }
-
-        lineRenderer.positionCount = linePoints.Count;
-        lineRenderer.SetPositions(linePoints.ToArray());
-
-
-        lineRenderer.endWidth = m_startWidth;
-        lineRenderer.startWidth = m_endWidth;
+        else
+        {
+            m_shotDirection = Vector3.zero;
+        }
     }
 
-    internal void InitShot(Vector3 shotStart, Vector3 shotDirection, GravityDirection gravityDirection)
+    internal void InitShot(Vector3 shotDirection, GravityDirection gravityDirection)
     {
-        m_shotStart = shotStart;
-        m_shotStart.z = 0;
-
-        m_shotDirection = shotDirection.normalized;
+        m_shotDirection = shotDirection;
         m_shotDirection.z = 0;
 
         m_gravityDirection = gravityDirection;
-        m_tValue = 0;
     }
 }
