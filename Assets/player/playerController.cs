@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gun : MonoBehaviour
+public class playerController : MonoBehaviour
 {
     //data fields
     private Rigidbody2D rigibody;
@@ -13,12 +13,12 @@ public class gun : MonoBehaviour
     private float jump_counter;
     private bool is_jumping=false;
     //public value
-    public float acceleration = 1.2f;
-    public float maxspeed = 10f;
-    public float jumpforce = 5f;
-    public float jumptime=0.35f;
+    private float acceleration = 1.2f;
+    private float maxspeed = 10f;
+    private float jumpforce = 9.8f;
+    private float jumptime=0.4f;
     public bool isGrounded = false;
-    public float highjumpvalue = 0.4f;
+    private float highjumpvalue = 0.9f;
 
     [Range(0, .3f)] [SerializeField] private float MovementSmoothing = .05f;
     private Vector3 zero_Velocity = Vector3.zero;
@@ -31,7 +31,7 @@ public class gun : MonoBehaviour
         //initialize
         rigibody = GetComponent<Rigidbody2D>();
         rigibody.collisionDetectionMode=CollisionDetectionMode2D.Continuous;
-
+        rigibody.gravityScale = 3f;
         //jump time
         jump_counter = jumptime; 
     }
