@@ -105,7 +105,7 @@ public class Animations : MonoBehaviour
         direction.z = 0f;
         //Debug.Log(direction);
         // arm_t.RotateAround(p2,new Vector3(0,0,1),5);
-        direction.y= Mathf.Clamp(direction.y, -45, 45);
+       // direction.y= Mathf.Clamp(direction.y, -45, 45);
         forearm_t.right = direction;
         arm_t.right = direction;
     }
