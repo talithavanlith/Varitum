@@ -64,10 +64,10 @@ public class Animations : MonoBehaviour
 
 
         //testing
-        arm_rotate_direction_right();
+        //arm_rotate_direction_right();
 
         //filp
-       /* if (arm_t.position.x <= Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
+        if (arm_t.position.x <= Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
         {
             arm_rotate_direction_right();
             if (faceright!=true) {
@@ -75,6 +75,9 @@ public class Animations : MonoBehaviour
                 player_localscale.x = 1f;
                 faceright = true;
                 player.transform.localScale = player_localscale;
+
+
+                player.transform.localPosition-= new Vector3(1f,0f,0f);
             }
         }
         else
@@ -86,8 +89,9 @@ public class Animations : MonoBehaviour
                 player_localscale.x = -1f;
                 faceright = false;
                 player.transform.localScale = player_localscale;
+                player.transform.localPosition += new Vector3(1f, 0f, 0f);
             }
-        }*/
+        }
 
 
     }
