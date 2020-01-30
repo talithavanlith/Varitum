@@ -25,7 +25,7 @@ public class CameraFollow2 : MonoBehaviour
         temp.x = playerTransform.position.x;
 
         temp.x += offset;
-        temp.y = playerTransform.position.y+2;
+        temp.y = playerTransform.position.y+1;
         temp.y += offset; 
 
 
