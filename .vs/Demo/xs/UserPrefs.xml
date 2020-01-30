@@ -1,17 +1,19 @@
 ﻿<Properties StartupConfiguration="{A77DEB61-50BA-3D2B-BA85-CD07C2DB2C66}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/player/gun.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Mouse_icon.cs">
     <Files>
       <File FileName="Assets/player/Gun.cs" Line="20" Column="9" />
+      <File FileName="Assets/player/Animations.cs" Line="39" Column="10" />
+      <File FileName="Assets/Scripts/Mouse_icon.cs" Line="14" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Demo" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="player" expanded="True">
-                <Node name="gun.cs" selected="True" />
+              <Node name="player" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="Mouse_icon.cs" selected="True" />
               </Node>
-              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -20,7 +22,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="14cd485d-5148-4e59-9526-8f3ad74e9a4d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="be22480f-8712-4e07-bdce-556de13e6a67" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
