@@ -11,6 +11,8 @@ public class Animations : MonoBehaviour
     public GameObject arm;
     public GameObject forearm;
     public GameObject mainbody;
+    public Transform bodyRoot;
+
     //local data fields
     private bool faceright = true;
     private Transform arm_t;
@@ -20,8 +22,6 @@ public class Animations : MonoBehaviour
     private Animator anim;
     private Vector3 player_localscale;
    // public Transform gravityArcPrefab;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -74,10 +74,10 @@ public class Animations : MonoBehaviour
                 player_localscale = player.transform.localScale;
                 player_localscale.x = 1f;
                 faceright = true;
-                player.transform.localScale = player_localscale;
+                bodyRoot.localScale = player_localscale;
 
 
-                player.transform.localPosition-= new Vector3(1f,0f,0f);
+                bodyRoot.localPosition-= new Vector3(1.3f,0f,0f);
             }
         }
         else
@@ -88,8 +88,8 @@ public class Animations : MonoBehaviour
                 player_localscale = player.transform.localScale;
                 player_localscale.x = -1f;
                 faceright = false;
-                player.transform.localScale = player_localscale;
-                player.transform.localPosition += new Vector3(1f, 0f, 0f);
+                bodyRoot.localScale = player_localscale;
+                bodyRoot.localPosition += new Vector3(1.3f, 0f, 0f);
             }
         }
 
