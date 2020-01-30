@@ -23,12 +23,12 @@ public class Ground : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collider)
     {
-        player.GetComponent<gun>().isGrounded = true;
+        player.GetComponent<playerController>().isGrounded = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        player.GetComponent<gun>().isGrounded = false;
+        player.GetComponent<playerController>().isGrounded = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
