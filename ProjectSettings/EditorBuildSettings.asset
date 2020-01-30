@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Testing Gravity Gun.unity
+    guid: 61ddc636fbf914e11ba210cc90858d91
+  - enabled: 0
+    path: Assets/Scenes/Background tester.unity
+    guid: 94ad8b51192bd4627947ef53e0c2dd69
+  - enabled: 0
+    path: Assets/Scenes/testing_player.unity
+    guid: f364a5ddb0a9e4059966b4c23225241f
+  - enabled: 0
+    path: Assets/Scenes/MainMenu.unity
+    guid: f332aa40a193c4d3bba08f1b175a5e6f
   m_configObjects: {}

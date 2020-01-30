@@ -34,7 +34,7 @@ public class InanimateObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        timer.SetValue(gravityTimer / UnscaledGravityTimer);
+        timer.SetValue(gravityTimer / (UnscaledGravityTimer / rigidbody.mass));
         if (gravityTimer > 0)
             gravityTimer -= Time.deltaTime;
         else
