@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class GravityShot : MonoBehaviour
 {
-    private static int LayerMask = 1 << 8;
     private static string ReflectorTag = "Reflector";
     private static float ShotSpeed = 20f;
 
@@ -12,6 +11,7 @@ public class GravityShot : MonoBehaviour
     private GravityDirection m_gravityDirection;
 
     private float m_timeAlive;
+    private float killTime = -1;
 
 
     void Start()
@@ -20,12 +20,15 @@ public class GravityShot : MonoBehaviour
         //var trails = ps.trails;
         //trails.enabled = true;
         //trails.ratio = 0.5f;
+
+        ;
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Collider2D>());
     }
 
     void FixedUpdate()
     {
         m_timeAlive += Time.deltaTime;
-        if (m_timeAlive > 5f)
+        if (m_timeAlive > 5f || (killTime > 0 && m_timeAlive >= killTime + 0.1f))
             Destroy(gameObject);
 
         transform.position += m_shotDirection.normalized * ShotSpeed * Time.deltaTime;
@@ -48,7 +51,7 @@ public class GravityShot : MonoBehaviour
             {
                 obj.ApplyGravity(m_gravityDirection);
             }
-
+            killTime = m_timeAlive;
             m_shotDirection = Vector3.zero;
             GetComponent<Collider2D>().enabled = false;
         }
