@@ -3,12 +3,16 @@ using System.Collections;
 
 public class GunController : MonoBehaviour
 {
-    private GravityDirection m_gravityDirection;
+    private GravityDirection gravityDirection;
     public GravityShot gravityShotPrefab;
+
+    private Texture gunWheelTexture;
+    private Texture gunWheelOnTexture;
 
     void Start()
     {
-
+        gunWheelTexture = Resources.Load<Texture>("gun_wheel");
+        gunWheelOnTexture = Resources.Load<Texture>("gun_wheel_on");
     }
 
     void Update()
@@ -22,12 +26,12 @@ public class GunController : MonoBehaviour
         // Scroll to change gravity direction
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         int direction = scroll > 0 ? -1 : scroll < 0 ? 1 : 0;
-        m_gravityDirection = (GravityDirection)(((int)m_gravityDirection + direction + 4) % 4);
+        gravityDirection = (GravityDirection)(((int)gravityDirection + direction + 4) % 4);
     }
 
     public void SetGravityDirection(GravityDirection direction)
     {
-        m_gravityDirection = direction;
+        gravityDirection = direction;
     }
 
     private void Shoot()
@@ -38,8 +42,17 @@ public class GunController : MonoBehaviour
 
         // Create shot object
         GravityShot shot = Instantiate(gravityShotPrefab);
-        shot.gameObject.name = "Shot (" + m_gravityDirection + ")";
-        shot.InitShot(clickPos - transform.position, m_gravityDirection);
+        shot.gameObject.name = "Shot (" + gravityDirection + ")";
+        shot.InitShot(clickPos - transform.position, gravityDirection);
         shot.transform.position = transform.position;
+    }
+
+    private void OnGUI()
+    {
+        // Hud showing current status
+        GUI.DrawTexture(new Rect(20, 20, 100, 100), gunWheelTexture, ScaleMode.ScaleToFit);
+
+        GUIUtility.RotateAroundPivot((int)gravityDirection * 90, new Vector2(70, 70));
+        GUI.DrawTexture(new Rect(20, 20, 100, 100), gunWheelOnTexture, ScaleMode.ScaleToFit);
     }
 }
