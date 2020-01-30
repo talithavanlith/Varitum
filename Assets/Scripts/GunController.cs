@@ -5,10 +5,12 @@ public class GunController : MonoBehaviour
 {
     private GravityDirection m_gravityDirection;
     public GravityShot gravityShotPrefab;
+    public Transform aimRoot;
 
     void Start()
     {
-
+        if (aimRoot == null)
+            aimRoot = transform;
     }
 
     void Update()
@@ -39,7 +41,7 @@ public class GunController : MonoBehaviour
         // Create shot object
         GravityShot shot = Instantiate(gravityShotPrefab);
         shot.gameObject.name = "Shot (" + m_gravityDirection + ")";
-        shot.InitShot(clickPos - transform.position, m_gravityDirection);
+        shot.InitShot(clickPos - aimRoot.position, m_gravityDirection);
         shot.transform.position = transform.position;
     }
 }
