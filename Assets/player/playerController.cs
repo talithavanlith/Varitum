@@ -12,12 +12,14 @@ public class playerController : MonoBehaviour
     private Vector2 movement;
     private float jump_counter;
     private bool is_jumping=false;
-    //public value
+    
+    //value
     private float acceleration = 1.2f;
     private float maxspeed = 10f;
     private float jumpforce = 9.8f;
     private float jumptime=0.4f;
     public bool isGrounded = false;
+    private bool isAlive =true;
     private float highjumpvalue = 0.9f;
 
     [Range(0, .3f)] [SerializeField] private float MovementSmoothing = .05f;
@@ -42,43 +44,21 @@ public class playerController : MonoBehaviour
         moveVertical = Input.GetKey(KeyCode.W)?1:Input.GetKey(KeyCode.S)?-1:0;
         moveHorizontal= Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
         movement = new Vector2(moveHorizontal,0f);
-        //jump
-        //jump if isgrounded
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        
+        if (isAlive == true)
         {
-            is_jumping = true;
-            jump_counter = jumptime;
-            rigibody.AddForce(new Vector2(0f, jumpforce), ForceMode2D.Impulse);
+            Jump();
         }
-        //hold space #jump higher
-        if (Input.GetKey(KeyCode.Space) && is_jumping)
-        {
-            if (jump_counter>0)
-            {
-                rigibody.AddForce(new Vector2(0f, jumpforce*highjumpvalue), ForceMode2D.Force);
-                jump_counter -= Time.deltaTime;
-            }
-            else
-            {
-                is_jumping = false;
-            }
-           
-        }
-        //relase sapce
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            is_jumping = false;
-        }
-
+       
     }
     private void FixedUpdate()
     {
+     
+
         //horizontal move
         Vector3 targetVelocity = new Vector2(moveHorizontal*maxspeed,rigibody.velocity.y);
-        rigibody.velocity = Vector3.SmoothDamp(rigibody.velocity,targetVelocity,ref zero_Velocity,MovementSmoothing);
-
-
-        
+        if (isAlive == true)
+            rigibody.velocity = Vector3.SmoothDamp(rigibody.velocity,targetVelocity,ref zero_Velocity,MovementSmoothing);
 
 
         //Debug.Log("player velocity"+rigibody.velocity);
@@ -94,5 +74,45 @@ public class playerController : MonoBehaviour
 
 
         //  rigibody.AddForce(movement*10F*speed);
+    }
+    private void Jump()
+    {
+        //jump
+        //jump if isgrounded
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            is_jumping = true;
+            jump_counter = jumptime;
+            rigibody.AddForce(new Vector2(0f, jumpforce), ForceMode2D.Impulse);
+        }
+        //hold space #jump higher
+        if (Input.GetKey(KeyCode.Space) && is_jumping)
+        {
+            if (jump_counter > 0)
+            {
+                rigibody.AddForce(new Vector2(0f, jumpforce * highjumpvalue), ForceMode2D.Force);
+                jump_counter -= Time.deltaTime;
+            }
+            else
+            {
+                is_jumping = false;
+            }
+
+        }
+        //relase sapce
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            is_jumping = false;
+        }
+
+    }
+    public void die()
+    {
+        isAlive = false;
+
+    }
+    public bool isDead()
+    {
+        return isAlive;
     }
 }
