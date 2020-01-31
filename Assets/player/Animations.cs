@@ -21,7 +21,8 @@ public class Animations : MonoBehaviour
     private float fireCD;
     private Animator anim;
     private Vector3 player_localscale;
-   // public Transform gravityArcPrefab;
+    private bool drop = true;
+    // public Transform gravityArcPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -50,9 +51,9 @@ public class Animations : MonoBehaviour
         //play animation
 
 
-        
-        //check if die
 
+        //check if die
+        
         if (player.GetComponent<playerController>().isDead() ==true)
         {
             //flip
@@ -63,11 +64,13 @@ public class Animations : MonoBehaviour
         else
         {
             anim.SetBool("isDie", true);
-            bool drop = true;
+           
             if (drop)
             {
-                arm_t.localPosition -= new Vector3(0,0.2f,0);
-           
+                arm_t.localPosition -= new Vector3(0,2f,0);
+                drop = false;
+                arm.SetActive(false);
+
             }
            
         }
