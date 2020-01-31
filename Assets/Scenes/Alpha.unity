@@ -477,7 +477,7 @@ PrefabInstance:
     - target: {fileID: 8247521673747235192, guid: a39ff7002c9fc4d0b80926d6063b3655,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8247521673747235192, guid: a39ff7002c9fc4d0b80926d6063b3655,
         type: 3}
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 850290173}
   - component: {fileID: 850290172}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: mushroomParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,8 +652,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 93926103d805b414486dcced09ece99c, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: ebc24571bc4b74445b955a87e11e53d8, type: 2}
+  - {fileID: 2100000, guid: ebc24571bc4b74445b955a87e11e53d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -832,9 +832,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 5
-      minScalar: 5
+      minScalar: 0.83
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -885,13 +885,13 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 0.45882356, g: 0.40000004, b: 0.50980395, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.45882356, g: 0.40000004, b: 0.50980395, a: 1}
+        key1: {r: 0.227451, g: 0.1764706, b: 0.25882354, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -949,8 +949,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.1
+      scalar: 0.39
+      minScalar: 1.01
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1530,7 +1530,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 34.2
+      scalar: 150
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6297,7 +6297,7 @@ EdgeCollider2D:
   - {x: 45.676697, y: -3.6160688}
   - {x: 45.825775, y: -12.418274}
   - {x: 57.33525, y: -12.8136835}
-  - {x: 58.41102, y: -22.569733}
+  - {x: 58.411026, y: -21.977558}
   - {x: 68.53157, y: -21.819181}
   - {x: 69.144, y: -23.254295}
   - {x: 69.97978, y: -23.534822}
