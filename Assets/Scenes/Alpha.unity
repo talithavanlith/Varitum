@@ -586,7 +586,7 @@ PrefabInstance:
     - target: {fileID: 8247521673747235192, guid: a39ff7002c9fc4d0b80926d6063b3655,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8247521673747235192, guid: a39ff7002c9fc4d0b80926d6063b3655,
         type: 3}
@@ -7140,7 +7140,7 @@ EdgeCollider2D:
   - {x: 45.676697, y: -3.6160688}
   - {x: 45.825775, y: -12.418274}
   - {x: 57.33525, y: -12.8136835}
-  - {x: 58.41102, y: -22.569733}
+  - {x: 58.411026, y: -21.977558}
   - {x: 68.53157, y: -21.819181}
   - {x: 69.144, y: -23.254295}
   - {x: 69.97978, y: -23.534822}
