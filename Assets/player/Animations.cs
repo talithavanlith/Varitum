@@ -63,6 +63,13 @@ public class Animations : MonoBehaviour
         else
         {
             anim.SetBool("isDie", true);
+            bool drop = true;
+            if (drop)
+            {
+                arm_t.localPosition -= new Vector3(0,0.2f,0);
+           
+            }
+           
         }
                
        

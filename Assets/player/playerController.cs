@@ -49,7 +49,12 @@ public class playerController : MonoBehaviour
         {
             Jump();
         }
-       
+
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            die();
+        }
     }
     private void FixedUpdate()
     {
