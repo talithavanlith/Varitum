@@ -227,6 +227,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &740237753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7941523474274241605, guid: 76db93cf30fc24561a4c3361ea6f691b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7941523474927955028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &740237755
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740237753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5506625, y: 0.15835762}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 1.27, w: 0}
+    pivot: {x: 0.20419265, y: 0.57984006}
+    oldSize: {x: 2.21, y: 3.17}
+    newSize: {x: 2.21, y: 3.17}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.84, y: 2.9819336}
+  m_EdgeRadius: 0
 --- !u!1 &1007693851
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,5 +740,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.496
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7941523475551591783, guid: 76db93cf30fc24561a4c3361ea6f691b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 76db93cf30fc24561a4c3361ea6f691b, type: 3}
