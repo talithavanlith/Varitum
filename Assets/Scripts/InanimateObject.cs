@@ -5,7 +5,7 @@ using System.Collections;
 public class InanimateObject : MonoBehaviour
 {
     private static float GravityScale = 5f;
-    private static float UnscaledGravityTimer = 5f; // seconds
+    public float effectTime = 5f; // seconds
     private static Vector2 DefaultGravity = new Vector2(0, -9.8f);
     private static Vector2[] GravityDirections =
     {
@@ -34,7 +34,7 @@ public class InanimateObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        timer.SetValue(gravityTimer / (UnscaledGravityTimer / rigidbody.mass));
+        timer.SetValue(gravityTimer / effectTime);
         if (gravityTimer > 0)
             gravityTimer -= Time.deltaTime;
         else
@@ -51,7 +51,7 @@ public class InanimateObject : MonoBehaviour
         int axisIndex = (int)direction;
         if (gravityTimer <= 0)
         {
-            gravityTimer = UnscaledGravityTimer / rigidbody.mass;
+            gravityTimer = effectTime;
         }
 
         if (direction == GravityDirection.DOWN)
