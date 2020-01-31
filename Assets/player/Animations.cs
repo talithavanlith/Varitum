@@ -21,7 +21,8 @@ public class Animations : MonoBehaviour
     private float fireCD;
     private Animator anim;
     private Vector3 player_localscale;
-   // public Transform gravityArcPrefab;
+    private bool drop = true;
+    // public Transform gravityArcPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -49,35 +50,51 @@ public class Animations : MonoBehaviour
         Debug.Log(arm_t.position+ "  :  ");
         //play animation
 
-      
-        //check if is running 
-        float  moveHorizontal = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
-        if (moveHorizontal != 0)
+
+
+        //check if die
+        
+        if (player.GetComponent<playerController>().isDead() ==true)
         {
-            anim.SetBool("isRunning",true);
-          //  Debug.Log("running");
+            //flip
+            flip();
+            //check if is running 
+            isRunning(Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0);
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            anim.SetBool("isDie", true);
+           
+            if (drop)
+            {
+                arm_t.localPosition -= new Vector3(0,2f,0);
+                drop = false;
+                arm.SetActive(false);
+
+            }
+           
         }
+               
+       
 
 
-        //testing
-        //arm_rotate_direction_right();
+    }
 
-        //filp
+    private void flip()
+    {
+
         if (arm_t.position.x <= Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
         {
             arm_rotate_direction_right();
-            if (faceright!=true) {
+            if (faceright != true)
+            {
                 player_localscale = player.transform.localScale;
                 player_localscale.x = 1f;
                 faceright = true;
                 bodyRoot.localScale = player_localscale;
 
 
-                bodyRoot.localPosition-= new Vector3(1.3f,0f,0f);
+                bodyRoot.localPosition -= new Vector3(1.3f, 0f, 0f);
             }
         }
         else
@@ -92,13 +109,21 @@ public class Animations : MonoBehaviour
                 bodyRoot.localPosition += new Vector3(1.3f, 0f, 0f);
             }
         }
-
-
     }
-    /*private void OnDrawGizmos()
+
+
+    private void isRunning(float moveHorizontal)
     {
-        Gizmos.DrawSphere(Input.mousePosition, 1f);
-    }*/
+        if (moveHorizontal != 0)
+        {
+            anim.SetBool("isRunning", true);
+            //  Debug.Log("running");
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
+    }
     private void arm_rotate_direction_right()
     {
         //Vector3 p2 = player_t.position;
