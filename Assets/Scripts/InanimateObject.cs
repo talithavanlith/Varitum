@@ -21,9 +21,12 @@ public class InanimateObject : MonoBehaviour
     private new Rigidbody2D rigidbody;
     private CircularTimer timer;
 
+    private bool isFalling;
+
     void Start()
     {
         gravity = DefaultGravity;
+        isFalling = true;
 
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.gravityScale = 0;
@@ -39,11 +42,12 @@ public class InanimateObject : MonoBehaviour
             gravityTimer -= Time.deltaTime;
         else
         {
-            gravity = DefaultGravity * GravityScale;
+            gravity = DefaultGravity;
+            isFalling = true;
             gravityTimer = 0;
         }
 
-        rigidbody.velocity = gravity;
+        rigidbody.velocity = gravity * GravityScale;
     }
 
     public void ApplyGravity(GravityDirection direction)
@@ -52,11 +56,20 @@ public class InanimateObject : MonoBehaviour
         if (gravityTimer <= 0)
         {
             gravityTimer = effectTime;
+            isFalling = false;
         }
 
         if (direction == GravityDirection.DOWN)
+        {
             gravityTimer = 0;
+            isFalling = true;
+        }
 
-        gravity = GravityDirections[axisIndex] * GravityScale;
+        gravity = GravityDirections[axisIndex];
+    }
+
+    public bool IsFalling()
+    {
+        return isFalling;
     }
 }
