@@ -21,8 +21,9 @@ public class GravityShot : MonoBehaviour
         //trails.enabled = true;
         //trails.ratio = 0.5f;
 
-        ;
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Collider2D>());
+        playerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>();
+        foreach (Collider2D c in player.GetComponentsInChildren<Collider2D>())
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), c);
     }
 
     void FixedUpdate()
