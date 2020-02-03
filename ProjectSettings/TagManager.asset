@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Test
   - MushroomGas
+  - Companion
   layers:
   - Default
   - TransparentFX
