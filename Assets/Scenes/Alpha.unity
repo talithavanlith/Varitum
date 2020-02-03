@@ -150,12 +150,12 @@ PrefabInstance:
     - target: {fileID: 8247521673747235192, guid: a39ff7002c9fc4d0b80926d6063b3655,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.76
+      value: 25.11
       objectReference: {fileID: 0}
     - target: {fileID: 8247521673747235192, guid: a39ff7002c9fc4d0b80926d6063b3655,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9236101
+      value: -1.13
       objectReference: {fileID: 0}
     - target: {fileID: 8247521673747235192, guid: a39ff7002c9fc4d0b80926d6063b3655,
         type: 3}
@@ -5793,7 +5793,7 @@ PrefabInstance:
     - target: {fileID: 7941523475551591776, guid: 89d8a7b87ef864468974de0494155e5e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.42
+      value: -35.2
       objectReference: {fileID: 0}
     - target: {fileID: 7941523475551591776, guid: 89d8a7b87ef864468974de0494155e5e,
         type: 3}
@@ -7041,7 +7041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b275cc097704ad6a235daa919ec063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectTime: 5
+  effectTime: 6
 --- !u!50 &2014430731
 Rigidbody2D:
   serializedVersion: 4
@@ -7054,8 +7054,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
-  m_LinearDrag: 60
+  m_Mass: 4
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -7443,6 +7443,10 @@ EdgeCollider2D:
   - {x: 31.143385, y: -12.751682}
   - {x: 74.97041, y: -12.955817}
   - {x: 73.15444, y: 23.49889}
+  - {x: 72.59988, y: 71.05308}
+  - {x: 38.7072, y: 96.954}
+  - {x: -10.402735, y: 147.6404}
+  - {x: 86.704605, y: 151.69006}
   - {x: 128.82127, y: 28.441067}
   - {x: 119.048706, y: -78.5993}
   - {x: -37.06224, y: -77.42093}
