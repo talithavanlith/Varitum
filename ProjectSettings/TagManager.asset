@@ -8,6 +8,7 @@ TagManager:
   - WALLJUMP
   - Ground
   - Test
+  - MushroomGas
   layers:
   - Default
   - TransparentFX

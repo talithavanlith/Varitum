@@ -80,6 +80,15 @@ public class playerController : MonoBehaviour
 
         //  rigibody.AddForce(movement*10F*speed);
     }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if(other.gameObject.tag == "MushroomGas")
+        {
+            die();
+            Debug.Log("PlayerKILLED");
+        }
+    }
     private void Jump()
     {
         //jump
