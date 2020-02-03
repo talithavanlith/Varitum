@@ -81,12 +81,21 @@ public class playerController : MonoBehaviour
         //  rigibody.AddForce(movement*10F*speed);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "Spikes")
+        {
+            die();
+            Debug.Log("SPIKE DEATH");
+        }
+    }
+
     private void OnParticleCollision(GameObject other)
     {
         if(other.gameObject.tag == "MushroomGas")
         {
             die();
-            Debug.Log("PlayerKILLED");
+            Debug.Log("PlayerKILLED, SHROOMS");
         }
     }
     private void Jump()
