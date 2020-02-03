@@ -29,6 +29,31 @@ public class GunController : MonoBehaviour
         gravityDirection = (GravityDirection)(((int)gravityDirection + direction + 4) % 4);
     }
 
+
+
+    void OnDrawGizmos()
+    {
+        //Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //Vector2 mousePos = mouseRay.origin + mouseRay.direction;
+        //Vector2 shoulderPos = transform.parent.parent.parent.position;
+
+        //float distance = Vector2.Distance(mousePos, shoulderPos);
+        //float radius = 2f;
+
+        //if (distance < radius)
+        //{
+        //    Vector2 fromShoulderToMouse = mousePos - shoulderPos;
+        //    Gizmos.DrawRay(shoulderPos, fromShoulderToMouse);
+            
+        //    Gizmos.color = Color.blue;
+        //    Gizmos.DrawSphere(shoulderPos + (fromShoulderToMouse.normalized * radius), 0.2f);
+        //}
+
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawSphere(mousePos, 0.1f);
+
+    }
+
     public void SetGravityDirection(GravityDirection direction)
     {
         gravityDirection = direction;
@@ -36,14 +61,24 @@ public class GunController : MonoBehaviour
 
     private void Shoot()
     {
-        // Transform click from screen into game coordinate system
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Vector3 clickPos = mouseRay.origin + mouseRay.direction;
+        Vector2 mousePos = mouseRay.origin + mouseRay.direction;
+        Vector2 shoulderPos = transform.parent.parent.parent.position;
+
+        float distance = Vector2.Distance(mousePos, shoulderPos);
+        float radius = 2f;
+
+        if (distance < radius)
+        {
+            Vector2 fromShoulderToMouse = mousePos - shoulderPos;
+            mousePos = shoulderPos + (fromShoulderToMouse.normalized * radius);
+        }
+
 
         // Create shot object
         GravityShot shot = Instantiate(gravityShotPrefab);
         shot.gameObject.name = "Shot (" + gravityDirection + ")";
-        shot.InitShot(clickPos - transform.position, gravityDirection);
+        shot.InitShot((Vector3)mousePos - transform.position, gravityDirection);
         shot.transform.position = transform.position;
     }
 
