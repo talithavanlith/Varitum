@@ -41,13 +41,13 @@ public class Animations : MonoBehaviour
         //Camera.main.WorldToScreenPoint( Input.mousePosition)
 
 
-        Debug.DrawLine(GameObject.FindGameObjectWithTag("Test").transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.red); 
+       // Debug.DrawLine(GameObject.FindGameObjectWithTag("Test").transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.red); 
         
-        Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint( Input.mousePosition), Color.green);
-        Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint(Input.mousePosition)+dis, Color.yellow);
+        //Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint( Input.mousePosition), Color.green);
+       // Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint(Input.mousePosition)+dis, Color.yellow);
 
-        Debug.Log("mouse postion: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        Debug.Log(arm_t.position+ "  :  ");
+       // Debug.Log("mouse postion: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
+      //  Debug.Log(arm_t.position+ "  :  ");
         //play animation
 
 

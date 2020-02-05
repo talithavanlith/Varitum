@@ -6,7 +6,7 @@ public class InanimateObject : MonoBehaviour
 {
     private static float GravityScale = 5f;
     public float effectTime = 5f; // seconds
-    private static Vector2 DefaultGravity = new Vector2(0, -9.8f);
+    private static Vector2 DefaultGravity = new Vector2(0, -6.8f);
     private static Vector2[] GravityDirections =
     {
         new Vector2(0, 1),
@@ -23,6 +23,11 @@ public class InanimateObject : MonoBehaviour
 
     private bool isFalling;
 
+    private float cooldown;
+
+    private Color defaultColor;
+    private static float GravityCooldownSeconds = 1f;
+
     void Start()
     {
         gravity = DefaultGravity;
@@ -33,6 +38,21 @@ public class InanimateObject : MonoBehaviour
         timer = Instantiate(Resources.Load("CircularTimer", typeof(CircularTimer))) as CircularTimer;
         timer.transform.parent = transform;
         timer.transform.localPosition = Vector3.zero;
+
+        defaultColor = GetComponent<SpriteRenderer>().color;
+    }
+
+    private void Update()
+    {
+        GetComponent<SpriteRenderer>().color = cooldown > 0 ? new Color(1f, 0.5f, 0.5f, 1f) : defaultColor;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.gameObject.GetComponent<EdgeCollider2D>());
+        }
     }
 
     void FixedUpdate()
@@ -42,16 +62,32 @@ public class InanimateObject : MonoBehaviour
             gravityTimer -= Time.deltaTime;
         else
         {
+            if (!isFalling)
+                cooldown = GravityCooldownSeconds;
             gravity = DefaultGravity;
             isFalling = true;
             gravityTimer = 0;
         }
 
-        rigidbody.velocity = gravity * GravityScale;
+        if (cooldown > 0)
+        {
+            cooldown -= Time.fixedDeltaTime;
+        }
+
+        if (isFalling)
+            rigidbody.gravityScale = GravityScale;
+        else
+        {
+            rigidbody.gravityScale = 0;
+            rigidbody.velocity = gravity * GravityScale;
+        }
     }
 
     public void ApplyGravity(GravityDirection direction)
     {
+        if (cooldown > 0)
+            return;
+
         int axisIndex = (int)direction;
         if (gravityTimer <= 0)
         {
