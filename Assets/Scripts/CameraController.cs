@@ -40,7 +40,6 @@ public class CameraController : MonoBehaviour
     void FixedUpdate()
     {
         TrackPlayer();
-        Debug.Log("!!");
     }
 
 

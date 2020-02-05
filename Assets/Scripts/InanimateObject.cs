@@ -23,6 +23,11 @@ public class InanimateObject : MonoBehaviour
 
     private bool isFalling;
 
+    private float cooldown;
+
+    private Color defaultColor;
+    private static float GravityCooldownSeconds = 1f;
+
     void Start()
     {
         gravity = DefaultGravity;
@@ -33,6 +38,22 @@ public class InanimateObject : MonoBehaviour
         timer = Instantiate(Resources.Load("CircularTimer", typeof(CircularTimer))) as CircularTimer;
         timer.transform.parent = transform;
         timer.transform.localPosition = Vector3.zero;
+
+        defaultColor = GetComponent<SpriteRenderer>().color;
+    }
+
+    private void Update()
+    {
+        GetComponent<SpriteRenderer>().color = cooldown > 0 ? new Color(1f, 0.5f, 0.5f, 1f) : defaultColor;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.gameObject.GetComponent<EdgeCollider2D>());
+        }
     }
 
     void FixedUpdate()
@@ -42,9 +63,16 @@ public class InanimateObject : MonoBehaviour
             gravityTimer -= Time.deltaTime;
         else
         {
+            if (!isFalling)
+                cooldown = GravityCooldownSeconds;
             gravity = DefaultGravity;
             isFalling = true;
             gravityTimer = 0;
+        }
+
+        if (cooldown > 0)
+        {
+            cooldown -= Time.fixedDeltaTime;
         }
 
         if (isFalling)
@@ -58,6 +86,9 @@ public class InanimateObject : MonoBehaviour
 
     public void ApplyGravity(GravityDirection direction)
     {
+        if (cooldown > 0)
+            return;
+
         int axisIndex = (int)direction;
         if (gravityTimer <= 0)
         {
