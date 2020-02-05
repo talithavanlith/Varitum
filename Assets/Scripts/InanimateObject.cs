@@ -6,7 +6,7 @@ public class InanimateObject : MonoBehaviour
 {
     private static float GravityScale = 5f;
     public float effectTime = 5f; // seconds
-    private static Vector2 DefaultGravity = new Vector2(0, -9.8f);
+    private static Vector2 DefaultGravity = new Vector2(0, -6.8f);
     private static Vector2[] GravityDirections =
     {
         new Vector2(0, 1),
@@ -47,7 +47,13 @@ public class InanimateObject : MonoBehaviour
             gravityTimer = 0;
         }
 
-        rigidbody.velocity = gravity * GravityScale;
+        if (isFalling)
+            rigidbody.gravityScale = GravityScale;
+        else
+        {
+            rigidbody.gravityScale = 0;
+            rigidbody.velocity = gravity * GravityScale;
+        }
     }
 
     public void ApplyGravity(GravityDirection direction)
