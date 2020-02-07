@@ -10,7 +10,7 @@ public class Ground : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("grounded-false");
+      //  Debug.Log("grounded-false");
         //  player= gameObject.transform.parent.gameObject;
     }
 
