@@ -15,7 +15,7 @@ public class GunController : MonoBehaviour
         gunWheelOnTexture = Resources.Load<Texture>("gun_wheel_on");
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Left click to shoot
         if (Input.GetMouseButtonDown(0))
