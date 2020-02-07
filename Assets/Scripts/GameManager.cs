@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool inPlay = true;
+    public static bool soundEnabled, musicEnabled;
+
     void Start()
     {
-        
+        soundEnabled = true;
+        musicEnabled = true;
     }
 
     void Update()
@@ -18,6 +22,8 @@ public class GameManager : MonoBehaviour
     {
         // TODO: Spawn player
         Debug.Log("Player spawn TODO");
+
+        inPlay = true;
     }
 
 }

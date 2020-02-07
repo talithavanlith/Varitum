@@ -15,6 +15,7 @@ public class MainMenuController : MonoBehaviour
     {
         imageTitlePos = imageTitle.position;
         SceneManager.LoadScene("Game", LoadSceneMode.Additive);
+        GameManager.inPlay = false;
     }
 
     void Update()
