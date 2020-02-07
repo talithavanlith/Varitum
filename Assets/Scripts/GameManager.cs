@@ -14,4 +14,10 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public static void SpawnPlayer()
+    {
+        // TODO: Spawn player
+        Debug.Log("Player spawn TODO");
+    }
+
 }
