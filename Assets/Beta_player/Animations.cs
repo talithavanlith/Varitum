@@ -9,7 +9,7 @@ public class Animations : MonoBehaviour
     public Vector3 dis=new Vector3(2,2,0);
     public GameObject player;
     public GameObject arm;
-    public GameObject forearm;
+    //public GameObject forearm;
     public GameObject mainbody;
     public Transform bodyRoot;
 
@@ -29,7 +29,7 @@ public class Animations : MonoBehaviour
     {
         player_t = player.transform;
         arm_t = arm.transform;
-        forearm_t = forearm.transform;
+        //forearm_t = forearm.transform;
         anim = mainbody.GetComponent<Animator>();
         //  arm_rotate_direction_right();
 
@@ -41,20 +41,21 @@ public class Animations : MonoBehaviour
         //Camera.main.WorldToScreenPoint( Input.mousePosition)
 
 
-       // Debug.DrawLine(GameObject.FindGameObjectWithTag("Test").transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.red); 
-        
-        //Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint( Input.mousePosition), Color.green);
-       // Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint(Input.mousePosition)+dis, Color.yellow);
+        // Debug.DrawLine(GameObject.FindGameObjectWithTag("Test").transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.red); 
 
-       // Debug.Log("mouse postion: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
-      //  Debug.Log(arm_t.position+ "  :  ");
+        // Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint( Input.mousePosition), Color.green);
+        // Debug.DrawLine(arm_t.position, Input.mousePosition, Color.green);
+         Debug.DrawLine(arm_t.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.yellow);
+
+        //Debug.Log("mouse postion: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        //Debug.Log(arm_t.position+ "  :  "+ Input.mousePosition);
         //play animation
 
 
 
         //check if die
-        
-        if (player.GetComponent<playerController>().isDead() ==true)
+
+        if (player.GetComponent<playerController>().isDead() == true)
         {
             //flip
             flip();
@@ -63,19 +64,19 @@ public class Animations : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isDie", true);
-           
+            //anim.SetBool("isDie", true);
+
             if (drop)
             {
-                arm_t.localPosition -= new Vector3(0,2f,0);
+                arm_t.localPosition -= new Vector3(0, 2f, 0);
                 drop = false;
                 arm.SetActive(false);
 
             }
-           
+
         }
-               
-       
+
+
 
 
     }
@@ -83,18 +84,18 @@ public class Animations : MonoBehaviour
     private void flip()
     {
 
-        if (arm_t.position.x <= Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
+        if (arm_t.position.x >= Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
         {
             arm_rotate_direction_right();
             if (faceright != true)
             {
-                player_localscale = player.transform.localScale;
+                player_localscale = bodyRoot.transform.localScale;
                 player_localscale.x = 1f;
                 faceright = true;
                 bodyRoot.localScale = player_localscale;
 
 
-                bodyRoot.localPosition -= new Vector3(1.3f, 0f, 0f);
+                bodyRoot.localPosition += new Vector3(3.8f, 0f, 0f);
             }
         }
         else
@@ -102,11 +103,11 @@ public class Animations : MonoBehaviour
             arm_rotate_direction_left();
             if (faceright == true)
             {
-                player_localscale = player.transform.localScale;
+                player_localscale = bodyRoot.transform.localScale;
                 player_localscale.x = -1f;
                 faceright = false;
                 bodyRoot.localScale = player_localscale;
-                bodyRoot.localPosition += new Vector3(1.3f, 0f, 0f);
+                bodyRoot.localPosition -= new Vector3(3.8f, 0f, 0f);
             }
         }
     }
@@ -116,18 +117,19 @@ public class Animations : MonoBehaviour
     {
         if (moveHorizontal != 0)
         {
-            anim.SetBool("isRunning", true);
+            anim.SetBool("running", true);
             //  Debug.Log("running");
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            anim.SetBool("running", false);
         }
     }
+
     private void arm_rotate_direction_right()
     {
         //Vector3 p2 = player_t.position;
-        Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition)+dis;
+        Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
        // Vector3 obj = Camera.main.WorldToScreenPoint(arm_t.position);
         Vector3 direction = mouse - arm_t.position;
@@ -135,8 +137,8 @@ public class Animations : MonoBehaviour
         //Debug.Log(direction);
         // arm_t.RotateAround(p2,new Vector3(0,0,1),5);
        // direction.y= Mathf.Clamp(direction.y, -45, 45);
-        forearm_t.right = direction;
-        arm_t.right = direction;
+       // forearm_t.right = direction;
+        arm_t.up = -direction;
     }
     private void arm_rotate_direction_left()
     {
@@ -149,7 +151,7 @@ public class Animations : MonoBehaviour
         //Debug.Log(direction);
         // arm_t.RotateAround(p2,new Vector3(0,0,1),5);
         
-        arm_t.right = -direction;
+        arm_t.up = -direction;
     }
 
 
