@@ -34,6 +34,11 @@ public class PauseMenuController : MonoBehaviour
         SetPaused(false);
     }
 
+    public void ResetClicked()
+    {
+
+    }
+
     public void SettingsClicked()
     {
         canvasPause.gameObject.SetActive(false);
