@@ -12,20 +12,20 @@ public class PauseMenuController : MonoBehaviour
 
     void Start()
     {
-        canvasPause.enabled = false;
-        canvasSettings.enabled = false;
+        canvasPause.gameObject.SetActive(false);
+        canvasSettings.gameObject.SetActive(false);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && GameManager.inPlay)
-            SetPaused(!canvasPause.enabled);
+            SetPaused(!canvasPause.gameObject.activeInHierarchy);
     }
 
     private void SetPaused(bool paused)
     {
-        canvasPause.enabled = paused;
-        canvasSettings.enabled = false;
+        canvasPause.gameObject.SetActive(paused);
+        canvasSettings.gameObject.SetActive(false);
         Time.timeScale = paused ? 0 : 1;
     }
 
@@ -34,16 +34,21 @@ public class PauseMenuController : MonoBehaviour
         SetPaused(false);
     }
 
+    public void ResetClicked()
+    {
+
+    }
+
     public void SettingsClicked()
     {
-        canvasPause.enabled = false;
+        canvasPause.gameObject.SetActive(false);
 
         toggleSound.isOn = GameManager.soundEnabled;
         toggleSound.GetComponentInChildren<Image>().color = GameManager.soundEnabled ? toggleColor : Color.white;
         toggleMusic.isOn = GameManager.musicEnabled;
         toggleMusic.GetComponentInChildren<Image>().color = GameManager.musicEnabled ? toggleColor : Color.white;
 
-        canvasSettings.enabled = true;
+        canvasSettings.gameObject.SetActive(true);
     }
 
     public void SettingsBackClicked()

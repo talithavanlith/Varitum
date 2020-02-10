@@ -17,7 +17,7 @@ public class GunController : MonoBehaviour
         animator = GetComponentInParent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Left click to shoot
         if (Input.GetMouseButtonDown(0))

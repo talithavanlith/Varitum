@@ -38,27 +38,16 @@ public class playerController : MonoBehaviour
         jump_counter = jumptime; 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        moveVertical = Input.GetKey(KeyCode.W)?1:Input.GetKey(KeyCode.S)?-1:0;
-        moveHorizontal= Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
-        movement = new Vector2(moveHorizontal,0f);
-        
+        moveVertical = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0;
+        moveHorizontal = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
+        movement = new Vector2(moveHorizontal, 0f);
+
         if (isAlive == true)
         {
             Jump();
         }
-
-
-        if (Input.GetKey(KeyCode.P))
-        {
-            die();
-        }
-    }
-    private void FixedUpdate()
-    {
-     
 
         //horizontal move
         Vector3 targetVelocity = new Vector2(moveHorizontal*maxspeed,rigibody.velocity.y);
