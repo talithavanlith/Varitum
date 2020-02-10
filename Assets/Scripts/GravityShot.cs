@@ -14,16 +14,19 @@ public class GravityShot : MonoBehaviour
     private float killTime = -1;
 
 
-    void Start()
+    void Awake()
     {
         //ParticleSystem ps = GetComponent<ParticleSystem>();
         //var trails = ps.trails;
         //trails.enabled = true;
         //trails.ratio = 0.5f;
 
-        playerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>();
-        foreach (Collider2D c in player.GetComponentsInChildren<Collider2D>())
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), c);
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            Collider2D c = obj.GetComponent<Collider2D>();
+            if (c != null)
+                Physics2D.IgnoreCollision(c, GetComponent<Collider2D>());
+        }
     }
 
     void FixedUpdate()
@@ -39,6 +42,7 @@ public class GravityShot : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
+
         ContactPoint2D contact = collision.GetContact(0);
         if (contact.collider.gameObject.CompareTag(ReflectorTag))
         {
