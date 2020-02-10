@@ -39,9 +39,4 @@ public class GameManager : MonoBehaviour
         staticPlayer.gameObject.SetActive(true);
     }
 
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(0, 0, 200, 200), "CHECKPOINT: " + currentCheckpoint);
-    }
-
 }
