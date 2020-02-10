@@ -9,10 +9,12 @@ public class GunController : MonoBehaviour
     private Texture gunWheelTexture;
     private Texture gunWheelOnTexture;
 
+    private Animator animator;
     void Start()
     {
         gunWheelTexture = Resources.Load<Texture>("gun_wheel");
         gunWheelOnTexture = Resources.Load<Texture>("gun_wheel_on");
+        animator = GetComponentInParent<Animator>();
     }
 
     void FixedUpdate()
@@ -21,6 +23,7 @@ public class GunController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+            animator.SetTrigger("recoil");
         }
 
         // Scroll to change gravity direction
