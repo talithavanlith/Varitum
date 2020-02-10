@@ -18,9 +18,10 @@ public class playerController : MonoBehaviour
     private float maxspeed = 10f;
     private float jumpforce = 9.8f;
     private float jumptime=0.4f;
-    public bool isGrounded = false;
+    public bool isGrounded = true;
     private bool isAlive =true;
     private float highjumpvalue = 0.9f;
+
 
     [Range(0, .3f)] [SerializeField] private float MovementSmoothing = .05f;
     private Vector3 zero_Velocity = Vector3.zero;
@@ -91,18 +92,21 @@ public class playerController : MonoBehaviour
     {
         //jump
         //jump if isgrounded
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && isGrounded && !is_jumping)
         {
+            isGrounded = false;
             is_jumping = true;
             jump_counter = jumptime;
             rigibody.AddForce(new Vector2(0f, jumpforce), ForceMode2D.Impulse);
         }
-        //hold space #jump higher
-        if (Input.GetKey(KeyCode.Space) && is_jumping)
+        // hold space #jump higher
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && is_jumping)
         {
             if (jump_counter > 0)
             {
                 rigibody.AddForce(new Vector2(0f, jumpforce * highjumpvalue), ForceMode2D.Force);
+                Debug.Log("!!!!!2");
+
                 jump_counter -= Time.deltaTime;
             }
             else
