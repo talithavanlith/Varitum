@@ -21,6 +21,9 @@ public class PauseMenuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && GameManager.inPlay)
             SetPaused(!canvasPause.gameObject.activeInHierarchy);
+
+        if (Input.GetKeyDown(KeyCode.R) && GameManager.inPlay)
+            ResetClicked();
     }
 
     private void SetPaused(bool paused)
