@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static bool inPlay = true;
     public static bool soundEnabled, musicEnabled;
-    public playerController player;
     private static playerController staticPlayer;
+    //public playerController player;
 
     private static Vector3 currentCheckpoint;
 
@@ -16,8 +16,9 @@ public class GameManager : MonoBehaviour
     {
         soundEnabled = true;
         musicEnabled = true;
-        staticPlayer = player;
-        staticPlayer.gameObject.SetActive(false);
+
+        //staticPlayer = player;
+        //staticPlayer.gameObject.SetActive(false);
     }
 
     public static void SetCheckpointPosition(Vector3 position)
@@ -25,18 +26,22 @@ public class GameManager : MonoBehaviour
         currentCheckpoint = position;
     }
 
-    void Update()
+    public static Vector3 GetCheckpointPosition()
     {
-        
+        return currentCheckpoint;
     }
 
     public static void SpawnPlayer()
     {
-        // TODO: Spawn player
-        Debug.Log("Player spawn TODO");
-
-        inPlay = true;
         staticPlayer.gameObject.SetActive(true);
+        inPlay = true;
     }
 
+    public static void SetPlayer(playerController player)
+    {
+        staticPlayer = player;
+        if (!inPlay)
+            player.gameObject.SetActive(false);
+    }
+   
 }

@@ -36,7 +36,14 @@ public class playerController : MonoBehaviour
         rigibody.collisionDetectionMode=CollisionDetectionMode2D.Continuous;
         rigibody.gravityScale = 3f;
         //jump time
-        jump_counter = jumptime; 
+        jump_counter = jumptime;
+
+        GameManager.SetPlayer(this);
+        if (GameManager.inPlay)
+        {
+            GameManager.SpawnPlayer();
+            transform.position = GameManager.GetCheckpointPosition();
+        }
     }
 
     private void FixedUpdate()
