@@ -16,6 +16,7 @@ public class MainMenuController : MonoBehaviour
         imageTitlePos = imageTitle.position;
         SceneManager.LoadScene("Game", LoadSceneMode.Additive);
         GameManager.inPlay = false;
+        menuExit = false;
     }
 
     void Update()
@@ -32,9 +33,9 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayClicked()
     {
-        Debug.Log("PLAY");
+        Debug.Log("PLAY GAME");
         menuExit = true;
-        StartCoroutine(DeferExit());
+        StartCoroutine("DeferExit");
     }
 
     public void SettingsClicked()
@@ -46,7 +47,9 @@ public class MainMenuController : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        SceneManager.UnloadSceneAsync("MainMenu");
+        Debug.Log("LOADED!");
+
         GameManager.SpawnPlayer();
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 }

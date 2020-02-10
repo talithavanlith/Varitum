@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenuController : MonoBehaviour
@@ -36,7 +37,8 @@ public class PauseMenuController : MonoBehaviour
 
     public void ResetClicked()
     {
-
+        SetPaused(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void SettingsClicked()
@@ -71,7 +73,8 @@ public class PauseMenuController : MonoBehaviour
 
     public void QuitClicked()
     {
-        Debug.Log("QUIT");
+        SetPaused(false);
+        SceneManager.LoadScene("MainMenu");
     }
 
 

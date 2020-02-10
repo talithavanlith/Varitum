@@ -675,7 +675,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 5
+  m_Constraints: 7
 --- !u!68 &308964496
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -3068,7 +3068,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: reset level (r)
+  m_Text: restore checkpoint (r)
 --- !u!222 &1381466817
 CanvasRenderer:
   m_ObjectHideFlags: 0
