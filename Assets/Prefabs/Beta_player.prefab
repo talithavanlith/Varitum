@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777680854933870}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 4400777680998635328}
   - component: {fileID: 4400777680998635330}
   - component: {fileID: 4400777680998635331}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: headcheck
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777681026194646}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: New LimbSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4400777681151482122}
   - component: {fileID: 4400777681151482123}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: leftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 4400777681640776573}
   - component: {fileID: 4400777681640776575}
   - component: {fileID: 4400777681640776572}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: groundcheck
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777681658271025}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777681850122481}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: leftLeg_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777681869915513}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777681872879661}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777681926437274}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777681946500557}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4400777681962630532}
   - component: {fileID: 4400777681962630533}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: right leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777682262493978}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,7 +902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777682265094436}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 4400777682315887381}
   - component: {fileID: 4400777682315887386}
   - component: {fileID: 4400777682315887376}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: main_body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1107,7 +1107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777682423539007}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1137,7 +1137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777682765077516}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1168,7 +1168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400777682782782965}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 4400777682812747045}
   - component: {fileID: 4400777682812747051}
   - component: {fileID: 4400777682812747044}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Beta_player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1278,6 +1278,7 @@ MonoBehaviour:
   arm: {fileID: 4400777681956056735}
   mainbody: {fileID: 4400777682315887387}
   bodyRoot: {fileID: 4400777682934170431}
+  blood: {fileID: 1075972375617653572, guid: bc92a2fcf96d2844ea2aa0de47bd53a7, type: 3}
 --- !u!1 &4400777682934170428
 GameObject:
   m_ObjectHideFlags: 0
