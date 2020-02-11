@@ -96,16 +96,20 @@ public class playerController : MonoBehaviour
 
             if (ground1.collider != null)
             {
-                Debug.Log("HIT: " + ground1.collider.name);
-                isGrounded = true;
-                groundedTimer = 0.2f;
+                if (!ground1.collider.CompareTag("Checkpoint"))
+                {
+                    isGrounded = true;
+                    groundedTimer = 0.2f;
+                }
             }
 
             if (ground2.collider != null)
             {
-                Debug.Log("HIT: " + ground2.collider.name);
-                isGrounded = true;
-                groundedTimer = 0.2f;
+                if (!ground2.collider.CompareTag("Checkpoint"))
+                {
+                    isGrounded = true;
+                    groundedTimer = 0.2f;
+                }
             }
         }
     }
