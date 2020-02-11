@@ -29,12 +29,14 @@ public class playerController : MonoBehaviour
     //testing
 
 
+    float groundedTimer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
         //initialize
         rigibody = GetComponent<Rigidbody2D>();
-        rigibody.collisionDetectionMode=CollisionDetectionMode2D.Continuous;
+        rigibody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rigibody.gravityScale = 3f;
         //jump time
         jump_counter = jumptime;
@@ -45,6 +47,7 @@ public class playerController : MonoBehaviour
             GameManager.SpawnPlayer();
             transform.position = GameManager.GetCheckpointPosition();
         }
+
     }
 
     private void FixedUpdate()
@@ -73,10 +76,38 @@ public class playerController : MonoBehaviour
          {
              rigibody.AddForce(movement * 20f * acceleration);
          }*/
+    }
+
+    private void Update()
+    {
+        Debug.DrawRay(transform.position - new Vector3(0.35f, 1.4f, 0), Vector3.down, Color.red);
+        Debug.DrawRay(transform.position - new Vector3(-0.37f, 1.4f, 0), Vector3.down, Color.red);
+
+        
+
+        if (groundedTimer > 0)
+            groundedTimer -= Time.deltaTime;
 
 
+        if (groundedTimer <= 0)
+        {
+            RaycastHit2D ground1 = Physics2D.Raycast(transform.position - new Vector3(0.35f, 1.4f, 0), Vector3.down, 0.02f);
+            RaycastHit2D ground2 = Physics2D.Raycast(transform.position - new Vector3(-0.37f, 1.4f, 0), Vector3.down, 0.02f);
 
-        //  rigibody.AddForce(movement*10F*speed);
+            if (ground1.collider != null)
+            {
+                Debug.Log("HIT: " + ground1.collider.name);
+                isGrounded = true;
+                groundedTimer = 0.2f;
+            }
+
+            if (ground2.collider != null)
+            {
+                Debug.Log("HIT: " + ground2.collider.name);
+                isGrounded = true;
+                groundedTimer = 0.2f;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

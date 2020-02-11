@@ -21,16 +21,16 @@ public class Ground : MonoBehaviour
     }
 
 
-    private void OnTriggerStay2D(Collider2D collider)
-    {
-        if (!collider.CompareTag("Player") && !collider.CompareTag("Checkpoint"))
-            player.GetComponent<playerController>().isGrounded = true;
-    }
+    //private void OnTriggerStay2D(Collider2D collider)
+    //{
+    //    if (!collider.CompareTag("Player") && !collider.CompareTag("Checkpoint"))
+    //        player.GetComponent<playerController>().isGrounded = true;
+    //}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        player.GetComponent<playerController>().isGrounded = false;
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    player.GetComponent<playerController>().isGrounded = false;
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
