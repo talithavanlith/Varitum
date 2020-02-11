@@ -91,8 +91,8 @@ public class playerController : MonoBehaviour
 
         if (groundedTimer <= 0)
         {
-            RaycastHit2D ground1 = Physics2D.Raycast(transform.position - new Vector3(0.35f, 1.4f, 0), Vector3.down, 0.02f);
-            RaycastHit2D ground2 = Physics2D.Raycast(transform.position - new Vector3(-0.37f, 1.4f, 0), Vector3.down, 0.02f);
+            RaycastHit2D ground1 = Physics2D.Raycast(transform.position - new Vector3(0.35f, 1.4f, 0), Vector3.down, 0.05f);
+            RaycastHit2D ground2 = Physics2D.Raycast(transform.position - new Vector3(-0.37f, 1.4f, 0), Vector3.down, 0.05f);
 
             if (ground1.collider != null)
             {
@@ -105,7 +105,6 @@ public class playerController : MonoBehaviour
 
             if (ground2.collider != null)
             {
-                Debug.Log("HIT: " + ground2.collider.name);
                 if (!ground2.collider.CompareTag("Checkpoint"))
                 {
                     isGrounded = true;
