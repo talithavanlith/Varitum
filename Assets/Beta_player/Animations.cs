@@ -12,6 +12,8 @@ public class Animations : MonoBehaviour
     //public GameObject forearm;
     public GameObject mainbody;
     public Transform bodyRoot;
+    public ParticleSystem blood;
+
 
     //local data fields
     private bool faceright = true;
@@ -32,6 +34,8 @@ public class Animations : MonoBehaviour
         //forearm_t = forearm.transform;
         anim = mainbody.GetComponent<Animator>();
         //  arm_rotate_direction_right();
+
+        //blood.Stop();
 
     }
 
@@ -64,7 +68,10 @@ public class Animations : MonoBehaviour
         }
         else
         {
+            blood.Play();
+
             anim.SetTrigger("die");
+
             if (drop)
             {
                 arm_t.localPosition -= new Vector3(0, 2f, 0);
@@ -152,6 +159,5 @@ public class Animations : MonoBehaviour
         
         arm_t.up = -direction;
     }
-
 
 }
