@@ -23,7 +23,7 @@ public class Ground : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if (!collider.CompareTag("Player"))
+        if (!collider.CompareTag("Player") && !collider.CompareTag("Checkpoint"))
             player.GetComponent<playerController>().isGrounded = true;
     }
 

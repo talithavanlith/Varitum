@@ -11,6 +11,7 @@ TagManager:
   - MushroomGas
   - Companion
   - Spikes
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
