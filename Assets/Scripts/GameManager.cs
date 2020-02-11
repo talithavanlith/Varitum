@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         soundEnabled = true;
         musicEnabled = true;
+        Time.timeScale = 1;
 
         //staticPlayer = player;
         //staticPlayer.gameObject.SetActive(false);
