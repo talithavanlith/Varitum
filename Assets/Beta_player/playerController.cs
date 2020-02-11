@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
@@ -132,8 +133,16 @@ public class playerController : MonoBehaviour
     public void die()
     {
         isAlive = false;
-
+        StartCoroutine(Respawn());
     }
+
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public bool isDead()
     {
         return isAlive;
