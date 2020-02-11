@@ -12,7 +12,7 @@ public class GravityShot : MonoBehaviour
 
     private float m_timeAlive;
     private float killTime = -1;
-
+    public ParticleSystem reflect;
 
     void Awake()
     {
@@ -47,10 +47,16 @@ public class GravityShot : MonoBehaviour
         if (contact.collider.gameObject.CompareTag(ReflectorTag))
         {
             m_shotDirection = Vector2.Reflect(m_shotDirection, contact.normal);
+            
             m_shotDirection.Normalize();
         }
         else
         {
+            // reflect.Play();
+            reflect.GetComponent<reflect_particle>().play();
+            Debug.Log("shoot" + "   :  " + reflect.isPlaying);
+
+
             InanimateObject obj = contact.collider.gameObject.GetComponent<InanimateObject>();
             if (obj)
             {
