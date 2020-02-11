@@ -3903,7 +3903,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -4980,7 +4980,7 @@ Transform:
   m_GameObject: {fileID: 6572330540808263956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.2, y: -7.9, z: -2}
-  m_LocalScale: {x: 0.357019, y: 0.34792784, z: 0.947}
+  m_LocalScale: {x: 0.381498, y: 0.34541997, z: 0.947}
   m_Children:
   - {fileID: 9197142577971729404}
   - {fileID: 6572330542184705421}
