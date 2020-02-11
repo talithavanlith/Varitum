@@ -53,8 +53,18 @@ public class GravityShot : MonoBehaviour
         else
         {
             // reflect.Play();
-            reflect.GetComponent<reflect_particle>().play();
-            Debug.Log("shoot" + "   :  " + reflect.isPlaying);
+            reflect_particle particle = Instantiate(reflect.GetComponent<reflect_particle>());
+            particle.transform.parent = collision.gameObject.transform;
+            particle.transform.localScale = Vector3.one;
+            particle.transform.position = collision.contacts[0].point + collision.contacts[0].normal * 0.01f;
+            float cosTheta = Vector3.Dot(collision.contacts[0].normal, Vector3.up);
+            float theta = Mathf.Acos(cosTheta);
+            Debug.Log(theta);
+            particle.transform.rotation = Quaternion.Euler(-90 - theta * 180 / Mathf.PI, 90, -90);
+
+            particle.Play();
+            //reflect.GetComponent<reflect_particle>().play();
+            //Debug.Log("shoot" + "   :  " + reflect.isPlaying);
 
 
             InanimateObject obj = contact.collider.gameObject.GetComponent<InanimateObject>();

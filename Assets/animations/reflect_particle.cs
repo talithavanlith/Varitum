@@ -4,36 +4,17 @@ using UnityEngine;
 
 public class reflect_particle : MonoBehaviour
 {
-     public ParticleSystem reflect;
+    public ParticleSystem reflect;
 
-    // Start is called before the first frame update
-    [System.Obsolete]
-    void Start()
+    public void Play()
     {
-        //reflect.playOnAwake = false;
-       // reflect.enableEmission = false;
-       // reflect.Stop();
+        reflect.Play();
+        StartCoroutine(stop());
     }
-    public void play()
-    {
-        if (!reflect.isPlaying)
-        {
-            reflect.Play();
-            Debug.Log("reflect play()");
-        }
-        else
-        {
 
-            reflect.Stop();
-            play();
-
-        }
-       
-        
-    }
-    // Update is called once per frame
-    void Update()
+    private IEnumerator stop()
     {
-        //reflect.Play();
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }
