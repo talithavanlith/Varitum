@@ -12,7 +12,7 @@ public class GravityShot : MonoBehaviour
 
     private float m_timeAlive;
     private float killTime = -1;
-
+    public ParticleSystem reflect;
 
     void Awake()
     {
@@ -47,10 +47,26 @@ public class GravityShot : MonoBehaviour
         if (contact.collider.gameObject.CompareTag(ReflectorTag))
         {
             m_shotDirection = Vector2.Reflect(m_shotDirection, contact.normal);
+            
             m_shotDirection.Normalize();
         }
         else
         {
+            // reflect.Play();
+            reflect_particle particle = Instantiate(reflect.GetComponent<reflect_particle>());
+            particle.transform.parent = collision.gameObject.transform;
+            particle.transform.localScale = Vector3.one;
+            particle.transform.position = collision.contacts[0].point + collision.contacts[0].normal * 0.01f;
+            float cosTheta = Vector3.Dot(collision.contacts[0].normal, Vector3.up);
+            float theta = Mathf.Acos(cosTheta);
+            Debug.Log(theta);
+            particle.transform.rotation = Quaternion.Euler(-90 - theta * 180 / Mathf.PI, 90, -90);
+
+            particle.Play();
+            //reflect.GetComponent<reflect_particle>().play();
+            //Debug.Log("shoot" + "   :  " + reflect.isPlaying);
+
+
             InanimateObject obj = contact.collider.gameObject.GetComponent<InanimateObject>();
             if (obj)
             {

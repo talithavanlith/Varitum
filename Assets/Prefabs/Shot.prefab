@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f363726f793df46d09467fb809321d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reflect: {fileID: 4308743185478601384, guid: d32abae40c4879a4aa5ba42a0e26a8e3, type: 3}
 --- !u!96 &5206924699734393078
 TrailRenderer:
   serializedVersion: 2
@@ -204,7 +205,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
