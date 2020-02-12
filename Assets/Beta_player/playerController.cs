@@ -28,6 +28,7 @@ public class playerController : MonoBehaviour
     private Vector3 zero_Velocity = Vector3.zero;
     //testing
 
+    public audioMaster audio;
 
     float groundedTimer = 0f;
 
@@ -49,15 +50,15 @@ public class playerController : MonoBehaviour
         }
 
     }
-    //TODO
-    public static bool isplayerGrounded()
-    {
-        return true;
-    }
+
     private void FixedUpdate()
     {
         moveVertical = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0;
         moveHorizontal = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
+
+        if (moveHorizontal != 0)
+            audio.step(GetComponent<playerController>());
+
         movement = new Vector2(moveHorizontal, 0f);
 
         if (isAlive == true)

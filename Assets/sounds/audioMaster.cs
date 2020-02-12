@@ -6,7 +6,7 @@ public class audioMaster : MonoBehaviour
 {
     public  AudioSource audioSource;
 
-     public AudioClip shot;
+    public AudioClip shot;
     public AudioClip jump;
     public AudioClip walk;
     public AudioClip land;
@@ -25,12 +25,20 @@ public class audioMaster : MonoBehaviour
     {
         
     }
-    public void step()
+
+
+    float lastStepTime;
+    public void step(playerController player)
     {
-        if (playerController.isplayerGrounded() == true)
-        {
-            audioSource.volume = 0.1f;
-            audioSource.PlayOneShot(walk);
+        if (player && player.isGrounded)
+        { 
+            if (Time.timeSinceLevelLoad > lastStepTime + 0.3f)
+            {
+                lastStepTime = Time.timeSinceLevelLoad;
+
+                audioSource.volume = 0.15f;
+                audioSource.PlayOneShot(walk);
+            }
         }
     }
 }
