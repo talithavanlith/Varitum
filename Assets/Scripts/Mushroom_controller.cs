@@ -7,6 +7,7 @@ public class Mushroom_controller : MonoBehaviour
     public Animator animator;
     public ParticleSystem particle;
     public ParticleSystem blood;
+    public AudioSource audioSource;
    // public GameObject mushroom;
 
     //private Transform mushroom_t;
@@ -40,6 +41,7 @@ public class Mushroom_controller : MonoBehaviour
             animator.SetTrigger("die");
             particle.Stop();
             blood.Play();
+            audioSource.Stop();
             Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
         }
     }

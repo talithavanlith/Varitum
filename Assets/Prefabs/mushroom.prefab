@@ -227,6 +227,7 @@ MonoBehaviour:
   animator: {fileID: 454333640}
   particle: {fileID: 7110394519817606120}
   blood: {fileID: 2742319150778697935}
+  audioSource: {fileID: 840749800}
 --- !u!1 &1067415860455032401
 GameObject:
   m_ObjectHideFlags: 0
@@ -10190,6 +10191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075972375617653572, guid: 5fb618bb53afa45a5a24231f109acbc1,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1075972375617653573, guid: 5fb618bb53afa45a5a24231f109acbc1,
         type: 3}
