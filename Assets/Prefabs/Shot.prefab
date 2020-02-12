@@ -86,7 +86,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Time: 0.15
   m_Parameters:
     serializedVersion: 3
@@ -210,7 +210,7 @@ PrefabInstance:
     - target: {fileID: 7955273007850130624, guid: 84bd094daa2e79442a813c9c01a3331c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7955273007850130624, guid: 84bd094daa2e79442a813c9c01a3331c,
         type: 3}

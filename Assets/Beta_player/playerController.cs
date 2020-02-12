@@ -163,15 +163,15 @@ public class playerController : MonoBehaviour
     public void die()
     {
         isAlive = false;
-        StartCoroutine(Respawn());
+      //  StartCoroutine(Respawn());
     }
 
 
-    private IEnumerator Respawn()
-    {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+   // private IEnumerator Respawn()
+   // {
+   //     yield return new WaitForSeconds(2f);
+   //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+   // }
 
     public bool isDead()
     {
