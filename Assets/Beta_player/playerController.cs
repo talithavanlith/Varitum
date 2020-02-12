@@ -80,11 +80,6 @@ public class playerController : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(transform.position - new Vector3(0.35f, 1.4f, 0), Vector3.down, Color.red);
-        Debug.DrawRay(transform.position - new Vector3(-0.37f, 1.4f, 0), Vector3.down, Color.red);
-
-        
-
         if (groundedTimer > 0)
             groundedTimer -= Time.deltaTime;
 

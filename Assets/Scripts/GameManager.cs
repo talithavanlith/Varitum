@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class GameManager : MonoBehaviour
     //public playerController player;
 
     private static Vector3 currentCheckpoint;
+    private static int currentCheckpointNum;
+    private const int NumCheckpoints = 10;
+
+    public Slider progressSlider;
+    private static Slider staticProgressSlider;
+
 
     void Start()
     {
@@ -20,11 +27,15 @@ public class GameManager : MonoBehaviour
 
         //staticPlayer = player;
         //staticPlayer.gameObject.SetActive(false);
+
+        staticProgressSlider = progressSlider;
     }
 
-    public static void SetCheckpointPosition(Vector3 position)
+    public static void SetCheckpointPosition(Vector3 position, int checkpointNum)
     {
         currentCheckpoint = position;
+        currentCheckpointNum = checkpointNum;
+        staticProgressSlider.value = 100f * currentCheckpointNum / (float)NumCheckpoints;
     }
 
     public static Vector3 GetCheckpointPosition()
