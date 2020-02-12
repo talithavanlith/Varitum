@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class audioMaster : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public enum Sounds
+    { shot,
+        jump,
 
-    // Update is called once per frame
-    void Update()
+
+
+    }
+    public AudioClip[] clips;
+
+    public void playAudio(Sounds sound)
     {
-        
+       
+      
     }
 }
