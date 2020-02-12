@@ -68,6 +68,8 @@ public class Animations : MonoBehaviour
         }
         else
         {
+            Debug.Log("Player is blood");
+
             blood.Play();
 
             anim.SetTrigger("die");
