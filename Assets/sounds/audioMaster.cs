@@ -17,6 +17,8 @@ public class audioMaster : MonoBehaviour
 
     public  void fire()
     {
+        
+        audioSource.volume = 0.09f;
         audioSource.PlayOneShot(shot);
 
 
@@ -30,13 +32,13 @@ public class audioMaster : MonoBehaviour
     float lastStepTime;
     public void step(playerController player)
     {
-        if (player && player.isGrounded)
+        if (player && player.isGrounded && player.isAlive)
         { 
             if (Time.timeSinceLevelLoad > lastStepTime + 0.3f)
             {
                 lastStepTime = Time.timeSinceLevelLoad;
 
-                audioSource.volume = 0.15f;
+                audioSource.volume = 0.2f;
                 audioSource.PlayOneShot(walk);
             }
         }
@@ -44,7 +46,7 @@ public class audioMaster : MonoBehaviour
 
     public void playerLand()
     {
-        audioSource.volume = 0.15f;
+        audioSource.volume = 0.25f;
         audioSource.PlayOneShot(land);
     }
 }

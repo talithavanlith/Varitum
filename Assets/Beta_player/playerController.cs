@@ -20,7 +20,7 @@ public class playerController : MonoBehaviour
     private float jumpforce = 9.8f;
     private float jumptime=0.4f;
     public bool isGrounded = true;
-    private bool isAlive =true;
+    public bool isAlive =true;
     private float highjumpvalue = 0.9f;
 
 
