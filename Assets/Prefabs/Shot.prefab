@@ -252,6 +252,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7955273007850130626, guid: 84bd094daa2e79442a813c9c01a3331c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 7955273007850130627, guid: 84bd094daa2e79442a813c9c01a3331c,
+        type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955273007850130627, guid: 84bd094daa2e79442a813c9c01a3331c,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955273007850130627, guid: 84bd094daa2e79442a813c9c01a3331c,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1035e297c374aa341afc426dfab79b4a,
+        type: 3}
+    - target: {fileID: 7955273007850130627, guid: 84bd094daa2e79442a813c9c01a3331c,
+        type: 3}
+      propertyPath: UVModule.mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7955273007850130637, guid: 84bd094daa2e79442a813c9c01a3331c,
         type: 3}
       propertyPath: m_Name
