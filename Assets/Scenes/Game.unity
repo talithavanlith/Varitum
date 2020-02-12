@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b275cc097704ad6a235daa919ec063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectTime: 3
+  effectTime: 3.25
 --- !u!50 &92254588
 Rigidbody2D:
   serializedVersion: 4
@@ -2184,9 +2184,9 @@ EdgeCollider2D:
   - {x: 78.988434, y: 11.590532}
   - {x: 79.8127, y: 17.822285}
   - {x: 80.7214, y: 17.985931}
-  - {x: 80.95923, y: 24.314014}
-  - {x: 80.64216, y: 24.97543}
-  - {x: 85.59123, y: 24.389515}
+  - {x: 80.741165, y: 23.763329}
+  - {x: 80.2969, y: 24.88365}
+  - {x: 85.972855, y: 24.591436}
 --- !u!61 &308964497
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9739,7 +9739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b275cc097704ad6a235daa919ec063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectTime: 1
+  effectTime: 0.75
 --- !u!70 &1013600562
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9768,7 +9768,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -9776,7 +9776,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1013600564
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11261,23 +11261,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.44355774, y: 2.805193}
-      - {x: 0.07384491, y: 2.8994312}
-      - {x: -0.0126571655, y: 1.9590702}
-      - {x: -0.06476593, y: 1.4216633}
-      - {x: -0.16358948, y: 0.12417793}
-      - {x: -0.18506622, y: -0.4638481}
-      - {x: -0.24682617, y: -1.634985}
-      - {x: -0.4211731, y: -4.0649395}
-      - {x: -0.4380722, y: -4.5619373}
-      - {x: 0.35205078, y: -4.6026363}
-      - {x: 0.85259247, y: -2.1643124}
-      - {x: 0.97527313, y: -1.7891598}
-      - {x: 1.1901016, y: -1.1666756}
-      - {x: 1.4078598, y: 0.9545994}
-      - {x: 0.71017456, y: 1.2067356}
-      - {x: 0.5344467, y: 1.9581242}
-      - {x: 0.8936691, y: 1.8455868}
+    - - {x: 0.11299133, y: 2.711729}
+      - {x: -0.38617706, y: -4.027361}
+      - {x: 0.59845734, y: -4.03277}
+      - {x: 1.350357, y: -1.094305}
+      - {x: 1.4877014, y: 0.3375454}
 --- !u!1001 &1132579299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15767,7 +15755,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -20965,7 +20953,7 @@ Transform:
   m_GameObject: {fileID: 2128955751}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.256, y: 15.587, z: 0}
-  m_LocalScale: {x: 1.2842329, y: 1.0201236, z: 1.3291516}
+  m_LocalScale: {x: 1.2842329, y: 1.38, z: 1.3291516}
   m_Children: []
   m_Father: {fileID: 1434784160}
   m_RootOrder: 4
@@ -20995,7 +20983,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -21319,6 +21307,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1434784160}
     m_Modifications:
+    - target: {fileID: 1078413280, guid: d9740d36f8158492391889d5f6fc6a49, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2699078600390456025, guid: d9740d36f8158492391889d5f6fc6a49,
         type: 3}
       propertyPath: m_LocalPosition.x
