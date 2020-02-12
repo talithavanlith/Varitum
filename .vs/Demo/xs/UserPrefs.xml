@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{A77DEB61-50BA-3D2B-BA85-CD07C2DB2C66}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Beta_player/Animations.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Beta_player/playerController.cs">
     <Files>
       <File FileName="Assets/Menu/MainMenuController.cs" Line="1" Column="1" NotebookId="1" IsPinned="True" />
-      <File FileName="Assets/Beta_player/Ground.cs" Line="60" Column="1" NotebookId="1" />
-      <File FileName="Assets/Beta_player/Animations.cs" Line="66" Column="35" NotebookId="1" />
-      <File FileName="Assets/Scripts/Mushroom_controller.cs" Line="29" Column="29" NotebookId="1" />
-      <File FileName="Assets/sounds/audioMaster.cs" Line="19" Column="7" NotebookId="1" />
-      <File FileName="Assets/Beta_player/playerController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Beta_player/Ground.cs" NotebookId="1" />
+      <File FileName="Assets/Beta_player/Animations.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/Mushroom_controller.cs" NotebookId="1" />
+      <File FileName="Assets/sounds/audioMaster.cs" Line="51" Column="1" NotebookId="1" />
+      <File FileName="Assets/Beta_player/playerController.cs" Line="189" Column="17" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1704" Y="73" Width="758" Height="918">
+      <FloatingWindow WindowId="1" X="1704" Y="51" Width="758" Height="918">
         <Files>
           <File FileName="Assets/Scripts/GravityShot.cs" Line="59" Column="31" />
         </Files>
@@ -22,7 +22,7 @@
             <Node name="Assets" expanded="True">
               <Node name="animations" expanded="True" />
               <Node name="Beta_player" expanded="True">
-                <Node name="Animations.cs" selected="True" />
+                <Node name="playerController.cs" selected="True" />
               </Node>
               <Node name="Menu" expanded="True" />
               <Node name="player" expanded="True" />

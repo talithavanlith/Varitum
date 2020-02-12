@@ -73,6 +73,7 @@ MonoBehaviour:
   animator: {fileID: 1629431301125391661}
   particle: {fileID: 8372707404356452877}
   blood: {fileID: 3499943003479709994}
+  audioSource: {fileID: 0}
 --- !u!1 &1629431300705420035
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +117,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2654eac5aa0f949c0aee043f7abf5f29, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10190,6 +10191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075972375617653572, guid: 5fb618bb53afa45a5a24231f109acbc1,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1075972375617653573, guid: 5fb618bb53afa45a5a24231f109acbc1,
         type: 3}
