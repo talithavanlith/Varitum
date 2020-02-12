@@ -17,7 +17,8 @@ public class Checkpoint : MonoBehaviour
         if (collision.GetComponentInParent<playerController>() && collision.GetComponentInParent<playerController>().CompareTag("Player"))
         {
             GameManager.SetCheckpointPosition(collision.gameObject.transform.position, checkpointNum);
-            gameObject.GetComponent<Renderer>().material.color = Color.green;
+            Color fadedYellow = new Color(223 / 255f, 221 / 255f, 111 / 255f);
+            gameObject.GetComponent<Renderer>().material.color = fadedYellow;
         }
     }
 }
