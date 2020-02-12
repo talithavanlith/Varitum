@@ -105,7 +105,6 @@ public class playerController : MonoBehaviour
 
             if (ground2.collider != null)
             {
-                Debug.Log("HIT: " + ground2.collider.name);
                 if (!ground2.collider.CompareTag("Checkpoint"))
                 {
                     isGrounded = true;

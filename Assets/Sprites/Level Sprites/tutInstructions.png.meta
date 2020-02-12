@@ -35,6 +35,21 @@ TextureImporter:
   - first:
       213: 6560152143649214951
     second: tutInstructions_10
+  - first:
+      213: -357369094973333027
+    second: tutInstructions_11
+  - first:
+      213: -7326230081883212166
+    second: tutInstructions_12
+  - first:
+      213: -5729530311037018353
+    second: tutInstructions_13
+  - first:
+      213: -7432731590591515042
+    second: tutInstructions_14
+  - first:
+      213: -1618535324523991038
+    second: tutInstructions_15
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -73,7 +88,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -184,10 +199,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 289
-        height: 72
+        width: 947
+        height: 378
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,7 +223,7 @@ TextureImporter:
         width: 917
         height: 401
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -229,7 +244,7 @@ TextureImporter:
         width: 205
         height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,7 +265,7 @@ TextureImporter:
         width: 298
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -271,7 +286,7 @@ TextureImporter:
         width: 75
         height: 298
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -292,7 +307,7 @@ TextureImporter:
         width: 725
         height: 294
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,7 +328,7 @@ TextureImporter:
         width: 1319
         height: 318
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -334,7 +349,7 @@ TextureImporter:
         width: 814
         height: 536
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -355,7 +370,7 @@ TextureImporter:
         width: 1462
         height: 501
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -376,7 +391,7 @@ TextureImporter:
         width: 973
         height: 399
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -397,7 +412,7 @@ TextureImporter:
         width: 247
         height: 226
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -405,6 +420,111 @@ TextureImporter:
       bones: []
       spriteID: ec3a82c0fd3df4792adc5276455a7c5c
       internalID: 6560152143649214951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutInstructions_11
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 0
+        width: 847
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce780e5d38a1d461792a630d32f0b549
+      internalID: -357369094973333027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutInstructions_12
+      rect:
+        serializedVersion: 2
+        x: 4386
+        y: 0
+        width: 1579
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbba339827a9946dd962ac2cbd19a0c5
+      internalID: -7326230081883212166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutInstructions_13
+      rect:
+        serializedVersion: 2
+        x: 5987
+        y: 699
+        width: 932
+        height: 959
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d5578d19f0643a3bb0eff1f2e77a2e
+      internalID: -5729530311037018353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutInstructions_14
+      rect:
+        serializedVersion: 2
+        x: 6975
+        y: 879
+        width: 1826
+        height: 760
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856ae727776f740678eeabfe1fa73087
+      internalID: -7432731590591515042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutInstructions_15
+      rect:
+        serializedVersion: 2
+        x: 11276
+        y: 987
+        width: 1469
+        height: 727
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389b9115cc46b4a76acd883e37e6399b
+      internalID: -1618535324523991038
       vertices: []
       indices: 
       edges: []
