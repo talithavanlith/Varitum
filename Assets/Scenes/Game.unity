@@ -9559,7 +9559,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 40
+  m_Mass: 45
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -9680,7 +9680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b275cc097704ad6a235daa919ec063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectTime: 0.2
+  effectTime: 0.3
 --- !u!70 &1013600562
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11202,8 +11202,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.09148407, y: 2.7789764}
-      - {x: -0.47073364, y: -4.103771}
+    - - {x: 0.02796936, y: 2.8003654}
+      - {x: -0.4502945, y: -4.5787125}
       - {x: 0.71595764, y: -3.4197254}
       - {x: 0.725029, y: -1.1786728}
       - {x: 1.6143875, y: 0.8172951}
@@ -12492,7 +12492,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 23
+  m_Mass: 18
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -13491,6 +13491,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4582675949357484575, guid: e6ac4b27134ff48029b7bf277c9ad0c6,
+        type: 3}
+      propertyPath: effectTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5392729801686513739, guid: e6ac4b27134ff48029b7bf277c9ad0c6,
         type: 3}
       propertyPath: m_Constraints
@@ -14177,7 +14182,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.1, y: 18.9434}
+  m_Offset: {x: -4.1, y: 18.865917}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14188,7 +14193,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.4083242, y: 4.7780495}
+  m_Size: {x: 4.4083242, y: 4.933012}
   m_EdgeRadius: 0
 --- !u!61 &1434784166
 BoxCollider2D:
@@ -21187,7 +21192,7 @@ PrefabInstance:
     - target: {fileID: 5559521856333593511, guid: 51b139e9db3294dd5b26a5a3414c3ce3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.7
+      value: -35.1
       objectReference: {fileID: 0}
     - target: {fileID: 5559521856333593511, guid: 51b139e9db3294dd5b26a5a3414c3ce3,
         type: 3}
