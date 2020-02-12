@@ -35,7 +35,8 @@ public class GameManager : MonoBehaviour
     {
         currentCheckpoint = position;
         currentCheckpointNum = checkpointNum;
-        staticProgressSlider.value = 100f * currentCheckpointNum / (float)NumCheckpoints;
+        if (staticProgressSlider)
+            staticProgressSlider.value = 100f * currentCheckpointNum / (float)NumCheckpoints;
     }
 
     public static Vector3 GetCheckpointPosition()

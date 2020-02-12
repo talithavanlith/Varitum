@@ -23797,6 +23797,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: -0.027005995
       objectReference: {fileID: 0}
+    - target: {fileID: 4400777682812747045, guid: 3e9dcc8a3e0b88346a5d374b93baffb2,
+        type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1254445956}
     - target: {fileID: 4400777682812747048, guid: 3e9dcc8a3e0b88346a5d374b93baffb2,
         type: 3}
       propertyPath: m_Name
