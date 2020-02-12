@@ -12,6 +12,8 @@ TagManager:
   - Companion
   - Spikes
   - Checkpoint
+  - SpaceShip
+  - shipFlame
   layers:
   - Default
   - TransparentFX
