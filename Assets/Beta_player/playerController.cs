@@ -98,6 +98,9 @@ public class playerController : MonoBehaviour
             {
                 if (!ground1.collider.CompareTag("Checkpoint"))
                 {
+                    if (!isGrounded)
+                        audio.playerLand();
+
                     isGrounded = true;
                     groundedTimer = 0.2f;
                 }
@@ -107,6 +110,9 @@ public class playerController : MonoBehaviour
             {
                 if (!ground2.collider.CompareTag("Checkpoint"))
                 {
+                    if(!isGrounded)
+                        audio.playerLand();
+
                     isGrounded = true;
                     groundedTimer = 0.2f;
                 }
