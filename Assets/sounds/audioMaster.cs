@@ -41,4 +41,10 @@ public class audioMaster : MonoBehaviour
             }
         }
     }
+
+    public void playerLand()
+    {
+        audioSource.volume = 0.15f;
+        audioSource.PlayOneShot(land);
+    }
 }

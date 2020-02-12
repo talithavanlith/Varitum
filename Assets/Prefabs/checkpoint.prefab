@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8901855420916615878}
   - component: {fileID: 8901855420916615897}
-  - component: {fileID: 8901855420916615896}
   - component: {fileID: 8901855420916615899}
+  - component: {fileID: 940725626350048443}
   m_Layer: 0
   m_Name: checkpoint
   m_TagString: Checkpoint
@@ -82,22 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8901855420916615896
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8901855420916615898}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.25
 --- !u!114 &8901855420916615899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,3 +95,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointNum: 0
+--- !u!61 &940725626350048443
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8901855420916615898}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 1.5999999, y: 1.81, z: 1.64, w: 1.66}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.2, y: 44.64}
+  m_EdgeRadius: 0
