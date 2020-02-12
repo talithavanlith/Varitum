@@ -4,18 +4,33 @@ using UnityEngine;
 
 public class audioMaster : MonoBehaviour
 {
-    public enum Sounds
-    { shot,
-        jump,
+    public  AudioSource audioSource;
 
+     public AudioClip shot;
+    public AudioClip jump;
+    public AudioClip walk;
+    public AudioClip land;
+    
+
+ 
+    public AudioClip[] clips;
+
+    public  void fire()
+    {
+        audioSource.PlayOneShot(shot);
 
 
     }
-    public AudioClip[] clips;
-
-    public void playAudio(Sounds sound)
+    private void shots()
     {
-       
-      
+        
+    }
+    public void step()
+    {
+        if (playerController.isplayerGrounded() == true)
+        {
+            audioSource.volume = 0.1f;
+            audioSource.PlayOneShot(walk);
+        }
     }
 }

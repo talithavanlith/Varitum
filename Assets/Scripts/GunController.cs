@@ -8,7 +8,7 @@ public class GunController : MonoBehaviour
 
     private Texture gunWheelTexture;
     private Texture gunWheelOnTexture;
-
+    public audioMaster audio;
     private Animator animator;
     void Start()
     {
@@ -24,6 +24,7 @@ public class GunController : MonoBehaviour
         {
             Shoot();
             animator.SetTrigger("recoil");
+            audio.fire();
         }
 
         // Scroll to change gravity direction

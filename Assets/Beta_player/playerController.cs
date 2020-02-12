@@ -49,7 +49,11 @@ public class playerController : MonoBehaviour
         }
 
     }
-
+    //TODO
+    public static bool isplayerGrounded()
+    {
+        return true;
+    }
     private void FixedUpdate()
     {
         moveVertical = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0;
