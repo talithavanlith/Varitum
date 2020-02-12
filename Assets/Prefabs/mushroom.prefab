@@ -227,6 +227,7 @@ MonoBehaviour:
   animator: {fileID: 454333640}
   particle: {fileID: 7110394519817606120}
   blood: {fileID: 2742319150778697935}
+  mushroom: {fileID: 6572330540808263956}
 --- !u!1 &1067415860455032401
 GameObject:
   m_ObjectHideFlags: 0
