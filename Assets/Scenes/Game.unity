@@ -3353,6 +3353,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 447540859}
     m_Modifications:
+    - target: {fileID: 3298773472072076860, guid: 20e765f3c4e32410f8fe59a8a3b70a4d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.4383817
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298773472072076860, guid: 20e765f3c4e32410f8fe59a8a3b70a4d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.370263
+      objectReference: {fileID: 0}
     - target: {fileID: 6572330540808263956, guid: 20e765f3c4e32410f8fe59a8a3b70a4d,
         type: 3}
       propertyPath: m_Name
@@ -6393,7 +6403,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
