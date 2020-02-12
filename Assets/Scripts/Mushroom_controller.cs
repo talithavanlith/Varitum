@@ -7,13 +7,13 @@ public class Mushroom_controller : MonoBehaviour
     public Animator animator;
     public ParticleSystem particle;
     public ParticleSystem blood;
-    public GameObject mushroom;
+   // public GameObject mushroom;
 
-    private Transform mushroom_t;
+    //private Transform mushroom_t;
     // Start is called before the first frame update
     void Start()
     {
-        mushroom_t = mushroom.transform;
+       /// mushroom_t = mushroom.transform;
     }
 
     // Update is called once per frame
@@ -29,12 +29,12 @@ public class Mushroom_controller : MonoBehaviour
         if (obj && obj.IsFalling())
         {
 
-            Vector3 scale = mushroom_t.localScale;
-            Debug.Log(scale);
-            scale.y /= 10;
-            Debug.Log("new:  "+scale);
-            mushroom.transform.localScale = scale;
-            mushroom.transform.localPosition += new Vector3(0f,mushroom_t.localPosition.x,0f);
+           // Vector3 scale = mushroom_t.localScale;
+            //Debug.Log(scale);
+           // scale.y /= 10;
+            //Debug.Log("new:  "+scale);
+            //mushroom.transform.localScale = scale;
+           // mushroom.transform.localPosition += new Vector3(0f,mushroom_t.localPosition.x,0f);
             
 
             animator.SetTrigger("die");
