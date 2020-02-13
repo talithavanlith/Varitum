@@ -38,6 +38,9 @@ public class rocket_audio : MonoBehaviour
             if (Camera.main.orthographicSize > 7f)
                 Camera.main.orthographicSize -= Time.deltaTime / 2f;
 
+            if (Camera.main.transform.localPosition.y > 0.6)
+                Camera.main.transform.localPosition = Camera.main.transform.localPosition - new Vector3(0, Time.deltaTime);
+
             SpriteRenderer bg = Camera.main.GetComponentInChildren<SpriteRenderer>();
 
             if (transform.localPosition.y > 46f)
@@ -52,15 +55,18 @@ public class rocket_audio : MonoBehaviour
             }
         }
 
+        Debug.Log(Camera.main.transform.localPosition.y);
+
         if (gameEnded)
         {
+            SpriteRenderer bg = Camera.main.GetComponentInChildren<SpriteRenderer>();
+
             if (transform.localPosition.y > 205f)
             {
-                SpriteRenderer bg = Camera.main.GetComponentInChildren<SpriteRenderer>();
                 bg.material.color = bg.material.color - Time.deltaTime * new Color(1, 1, 1, 0);
             }
 
-            if (transform.localPosition.y > 230f)
+            if (bg.material.color.r < 0)
             {
                 SceneManager.LoadScene("MainMenu");
             }
