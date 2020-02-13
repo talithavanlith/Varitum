@@ -6,9 +6,12 @@ public class Vine : MonoBehaviour
 {
     private Animator animator;
     public AudioSource AudioSource;
+    public float offset;
     void Start()
     {
         animator = GetComponent<Animator>();
+        // float randomIdleStart = Random.Range(0, animator.GetCurrentAnimatorStateInfo(1).length); //Set a random part of the animation to start from
+        animator.SetFloat("speed",offset);
 
     }
 
