@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private static Vector3 currentCheckpoint = new Vector3(3.75f, 0f);
     private static int currentCheckpointNum;
-    private const int NumCheckpoints = 10;
+    private const int NumCheckpoints = 11;
 
     public Slider progressSlider;
     private static Slider staticProgressSlider;
