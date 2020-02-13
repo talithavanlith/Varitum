@@ -192,4 +192,8 @@ public class playerController : MonoBehaviour
     {
         return isAlive;
     }
+    public void disactive()
+    {
+        
+    }
 }
