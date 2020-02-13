@@ -43,7 +43,7 @@ public class Mushroom_controller : MonoBehaviour
             animator.SetTrigger("die");
             audioSource.Stop();
             particle.Stop();
-            audioSource.volume = 10f;
+            audioSource.volume = 1f;
             audioSource.PlayOneShot(death);
             blood.Play();
             
