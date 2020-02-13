@@ -24,6 +24,8 @@ public class playerController : MonoBehaviour
     private float highjumpvalue = 0.9f;
 
 
+    public Canvas respawnCanvas;
+
     [Range(0, .3f)] [SerializeField] private float MovementSmoothing = .05f;
     private Vector3 zero_Velocity = Vector3.zero;
     //testing
@@ -173,6 +175,8 @@ public class playerController : MonoBehaviour
     }
     public void die()
     {
+        Debug.Log("DIE");
+        respawnCanvas.gameObject.SetActive(true);
         isAlive = false;
       //  StartCoroutine(Respawn());
     }
