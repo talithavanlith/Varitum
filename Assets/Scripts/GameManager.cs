@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public Slider progressSlider;
     private static Slider staticProgressSlider;
 
+    public GameObject moveInstructions;
+    private static GameObject staticMoveInstructions;
 
     void Start()
     {
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
         //staticPlayer.gameObject.SetActive(false);
 
         staticProgressSlider = progressSlider;
+        staticMoveInstructions = moveInstructions;
     }
 
     public static void SetCheckpointPosition(Vector3 position, int checkpointNum)
@@ -48,6 +51,8 @@ public class GameManager : MonoBehaviour
     {
         staticPlayer.gameObject.SetActive(true);
         inPlay = true;
+
+        staticMoveInstructions.SetActive(true);
     }
 
     public static void SetPlayer(playerController player)
