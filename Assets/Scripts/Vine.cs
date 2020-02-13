@@ -5,7 +5,7 @@ using UnityEngine;
 public class Vine : MonoBehaviour
 {
     private Animator animator;
-
+    public AudioSource AudioSource;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -36,5 +36,9 @@ public class Vine : MonoBehaviour
         {
             animator.SetBool("attact", true);
         }
+    }
+    public void attack()
+    {
+        AudioSource.Play();
     }
 }
