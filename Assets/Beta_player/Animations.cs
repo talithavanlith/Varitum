@@ -70,7 +70,11 @@ public class Animations : MonoBehaviour
         {
             Debug.Log("Player is blood");
 
-            blood.Play();
+            if (!blood.isPlaying)
+            {
+                blood.Play();
+            }
+        
 
             anim.SetTrigger("die");
 
