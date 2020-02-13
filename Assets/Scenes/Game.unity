@@ -21693,6 +21693,26 @@ PrefabInstance:
       propertyPath: CollisionModule.collisionMessages
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7110394519817606120, guid: 20e765f3c4e32410f8fe59a8a3b70a4d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110394519817606120, guid: 20e765f3c4e32410f8fe59a8a3b70a4d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110394519817606120, guid: 20e765f3c4e32410f8fe59a8a3b70a4d,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110394519817606120, guid: 20e765f3c4e32410f8fe59a8a3b70a4d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20e765f3c4e32410f8fe59a8a3b70a4d, type: 3}
 --- !u!4 &1153804364 stripped
