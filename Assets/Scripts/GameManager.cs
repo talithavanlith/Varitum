@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private static playerController staticPlayer;
     //public playerController player;
 
-    private static Vector3 currentCheckpoint;
+    private static Vector3 currentCheckpoint = new Vector3(3.75f, 0f);
     private static int currentCheckpointNum;
     private const int NumCheckpoints = 10;
 
@@ -52,12 +52,14 @@ public class GameManager : MonoBehaviour
         staticPlayer.gameObject.SetActive(true);
         inPlay = true;
 
-        staticMoveInstructions.SetActive(true);
+        if (staticMoveInstructions)
+            staticMoveInstructions.SetActive(true);
     }
 
     public static void SetPlayer(playerController player)
     {
         staticPlayer = player;
+
         if (!inPlay)
             player.gameObject.SetActive(false);
     }
