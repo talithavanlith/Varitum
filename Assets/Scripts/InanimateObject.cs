@@ -49,8 +49,11 @@ public class InanimateObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
+        
         if (collision.gameObject.CompareTag("Spikes"))
         {
+         
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.gameObject.GetComponent<EdgeCollider2D>());
         }
     }

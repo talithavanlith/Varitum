@@ -73,7 +73,8 @@ MonoBehaviour:
   animator: {fileID: 1629431301125391661}
   particle: {fileID: 8372707404356452877}
   blood: {fileID: 3499943003479709994}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1629431300705420045}
+  death: {fileID: 8300000, guid: a3a66f70032b94d53b4c46e0c6b8a473, type: 3}
 --- !u!1 &1629431300705420035
 GameObject:
   m_ObjectHideFlags: 0

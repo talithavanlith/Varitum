@@ -8,13 +8,15 @@ public class Mushroom_controller : MonoBehaviour
     public ParticleSystem particle;
     public ParticleSystem blood;
     public AudioSource audioSource;
-   // public GameObject mushroom;
+    public AudioClip death;
+    // public GameObject mushroom;
 
     //private Transform mushroom_t;
     // Start is called before the first frame update
     void Start()
     {
-       /// mushroom_t = mushroom.transform;
+        /// mushroom_t = mushroom.transform;
+       
     }
 
     // Update is called once per frame
@@ -39,9 +41,12 @@ public class Mushroom_controller : MonoBehaviour
             
 
             animator.SetTrigger("die");
-            particle.Stop();
-            blood.Play();
             audioSource.Stop();
+            particle.Stop();
+            audioSource.volume = 1f;
+            audioSource.PlayOneShot(death);
+            blood.Play();
+            
             Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
         }
     }

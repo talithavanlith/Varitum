@@ -228,6 +228,7 @@ MonoBehaviour:
   particle: {fileID: 7110394519817606120}
   blood: {fileID: 2742319150778697935}
   audioSource: {fileID: 840749800}
+  death: {fileID: 8300000, guid: a3a66f70032b94d53b4c46e0c6b8a473, type: 3}
 --- !u!1 &1067415860455032401
 GameObject:
   m_ObjectHideFlags: 0
@@ -10150,17 +10151,17 @@ PrefabInstance:
     - target: {fileID: 1075972375617653572, guid: 5fb618bb53afa45a5a24231f109acbc1,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.35526544
+      value: 0.63529414
       objectReference: {fileID: 0}
     - target: {fileID: 1075972375617653572, guid: 5fb618bb53afa45a5a24231f109acbc1,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1075972375617653572, guid: 5fb618bb53afa45a5a24231f109acbc1,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.9716981
+      value: 0.5058824
       objectReference: {fileID: 0}
     - target: {fileID: 1075972375617653572, guid: 5fb618bb53afa45a5a24231f109acbc1,
         type: 3}
@@ -10191,6 +10192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075972375617653572, guid: 5fb618bb53afa45a5a24231f109acbc1,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1075972375617653573, guid: 5fb618bb53afa45a5a24231f109acbc1,
         type: 3}
