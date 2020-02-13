@@ -11,12 +11,17 @@ public class MainMenuController : MonoBehaviour
     private Vector2 imageTitlePos;
     private bool menuExit;
 
+    public Canvas menuCanvas, settingsCanvas;
+
     void Start()
     {
         imageTitlePos = imageTitle.position;
         SceneManager.LoadScene("Game", LoadSceneMode.Additive);
         GameManager.inPlay = false;
         menuExit = false;
+
+        menuCanvas.gameObject.SetActive(true);
+        settingsCanvas.gameObject.SetActive(false);
     }
 
     void Update()

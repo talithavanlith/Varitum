@@ -17,8 +17,10 @@ public class Checkpoint : MonoBehaviour
         if (collision.GetComponentInParent<playerController>() && collision.GetComponentInParent<playerController>().CompareTag("Player"))
         {
             if (transform.position.x > GameManager.GetCheckpointPosition().x + 1f)
+            {
                 audioSource.Play();
-
+                audioSource.volume = 0.15f;
+            }
             GameManager.SetCheckpointPosition(collision.gameObject.transform.position, checkpointNum);
             Color fadedYellow = new Color(223 / 255f, 221 / 255f, 111 / 255f);
             gameObject.GetComponent<Renderer>().material.color = fadedYellow;

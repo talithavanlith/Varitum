@@ -15399,6 +15399,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressSlider: {fileID: 1722464827}
   moveInstructions: {fileID: 1331883607}
+  audio: {fileID: 1399785878}
+  bgMusic: {fileID: 1399785877}
 --- !u!114 &961038387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24883,6 +24885,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1877658497559649204, guid: 3e9dcc8a3e0b88346a5d374b93baffb2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Audio
+      objectReference: {fileID: 0}
     - target: {fileID: 4400777682812747045, guid: 3e9dcc8a3e0b88346a5d374b93baffb2,
         type: 3}
       propertyPath: respawnCanvas
@@ -24953,8 +24960,25 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8235094561680976195, guid: 3e9dcc8a3e0b88346a5d374b93baffb2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Music
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e9dcc8a3e0b88346a5d374b93baffb2, type: 3}
+--- !u!82 &1399785877 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6799205994099421098, guid: 3e9dcc8a3e0b88346a5d374b93baffb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1399785876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1399785878 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 403407804, guid: 3e9dcc8a3e0b88346a5d374b93baffb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1399785876}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434784159
 GameObject:
   m_ObjectHideFlags: 0

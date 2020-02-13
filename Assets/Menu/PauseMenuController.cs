@@ -49,9 +49,9 @@ public class PauseMenuController : MonoBehaviour
         canvasPause.gameObject.SetActive(false);
 
         toggleSound.isOn = GameManager.soundEnabled;
-        toggleSound.GetComponentInChildren<Image>().color = GameManager.soundEnabled ? toggleColor : Color.white;
+        //toggleSound.GetComponentInChildren<Image>().color = GameManager.soundEnabled ? toggleColor : Color.white;
         toggleMusic.isOn = GameManager.musicEnabled;
-        toggleMusic.GetComponentInChildren<Image>().color = GameManager.musicEnabled ? toggleColor : Color.white;
+        //toggleMusic.GetComponentInChildren<Image>().color = GameManager.musicEnabled ? toggleColor : Color.white;
 
         canvasSettings.gameObject.SetActive(true);
     }
@@ -64,14 +64,14 @@ public class PauseMenuController : MonoBehaviour
 
     public void SettingsToggleSoundChanged()
     {
-        GameManager.soundEnabled = !GameManager.soundEnabled;
-        toggleSound.GetComponentInChildren<Image>().color = GameManager.soundEnabled ? toggleColor : Color.white;
+        //toggleSound.GetComponentInChildren<Image>().color = GameManager.soundEnabled ? toggleColor : Color.white;
+        GameManager.SetSound(toggleSound.isOn);
     }
 
     public void SettingsToggleMusicChanged()
     {
-        GameManager.musicEnabled = !GameManager.musicEnabled;
-        toggleMusic.GetComponentInChildren<Image>().color = GameManager.musicEnabled ? toggleColor : Color.white;
+        //toggleMusic.GetComponentInChildren<Image>().color = GameManager.musicEnabled ? toggleColor : Color.white;
+        GameManager.SetMusic(toggleMusic.isOn);
     }
 
     public void QuitClicked()

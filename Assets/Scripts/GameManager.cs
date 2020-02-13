@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static bool inPlay = true;
-    public static bool soundEnabled, musicEnabled;
+    public static bool soundEnabled = true, musicEnabled = true;
     private static playerController staticPlayer;
     //public playerController player;
 
@@ -21,10 +21,10 @@ public class GameManager : MonoBehaviour
     public GameObject moveInstructions;
     private static GameObject staticMoveInstructions;
 
+    public AudioSource audio, bgMusic;
+
     void Start()
     {
-        soundEnabled = true;
-        musicEnabled = true;
         Time.timeScale = 1;
 
         //staticPlayer = player;
@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
 
         staticProgressSlider = progressSlider;
         staticMoveInstructions = moveInstructions;
+
+        audio.mute = !soundEnabled;
+        bgMusic.mute = !musicEnabled;
     }
 
     public static void SetCheckpointPosition(Vector3 position, int checkpointNum)
@@ -63,5 +66,21 @@ public class GameManager : MonoBehaviour
         if (!inPlay)
             player.gameObject.SetActive(false);
     }
-   
+
+    public static void SetSound(bool enabled)
+    {
+        soundEnabled = enabled;
+    }
+
+    public static void SetMusic(bool enabled)
+    {
+        musicEnabled = enabled;
+    }
+
+    private void Update()
+    {
+        audio.mute = !soundEnabled;
+        bgMusic.mute = !musicEnabled;
+    }
+
 }

@@ -20,7 +20,7 @@ public class GunController : MonoBehaviour
     void Update()
     {
         // Left click to shoot
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.timeScale > 0)
         {
             Shoot();
             animator.SetTrigger("recoil");
