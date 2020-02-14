@@ -18,10 +18,12 @@ public class rocket_audio : MonoBehaviour
     public void launch()
     {
         Animator.SetTrigger("launch");
+        audioSource.volume = 1f;
         audioSource.PlayOneShot(rocket_lauch);
     }
     public void close()
     {
+        audioSource.volume = 0.8f;
         Animator.SetTrigger("close");
         audioSource.PlayOneShot(closedoor);
         Destroy(Camera.main.GetComponent<CameraController>());
