@@ -2392,8 +2392,10 @@ EdgeCollider2D:
   - {x: 78.988434, y: 11.590532}
   - {x: 79.8127, y: 17.822285}
   - {x: 80.7214, y: 17.985931}
-  - {x: 80.501785, y: 24.15229}
-  - {x: 80.32195, y: 24.929226}
+  - {x: 80.93273, y: 21.017727}
+  - {x: 81.82548, y: 22.973583}
+  - {x: 80.87303, y: 24.161636}
+  - {x: 80.22695, y: 24.972845}
   - {x: 86.68911, y: 24.55124}
 --- !u!61 &308964497
 BoxCollider2D:
@@ -22458,6 +22460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141309865}
   - component: {fileID: 1141309864}
+  - component: {fileID: 1141309866}
   m_Layer: 0
   m_Name: tutInstructions_9
   m_TagString: Untagged
@@ -22529,6 +22532,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1141309866
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141309863}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &1141559530
 GameObject:
   m_ObjectHideFlags: 0
