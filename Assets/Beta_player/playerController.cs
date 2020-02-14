@@ -90,11 +90,11 @@ public class playerController : MonoBehaviour
         if (groundedTimer > 0)
             groundedTimer -= Time.deltaTime;
 
-
         if (groundedTimer <= 0)
         {
             RaycastHit2D ground1 = Physics2D.Raycast(transform.position - new Vector3(0.35f, 1.4f, 0), Vector3.down, 0.05f);
             RaycastHit2D ground2 = Physics2D.Raycast(transform.position - new Vector3(-0.37f, 1.4f, 0), Vector3.down, 0.05f);
+            bool changed = false;
 
             if (ground1.collider != null)
             {
@@ -104,7 +104,8 @@ public class playerController : MonoBehaviour
                         audio.playerLand();
 
                     isGrounded = true;
-                    groundedTimer = 0.2f;
+                    groundedTimer = 0.1f;
+                    changed = true;
                 }
             }
 
@@ -116,9 +117,12 @@ public class playerController : MonoBehaviour
                         audio.playerLand();
 
                     isGrounded = true;
-                    groundedTimer = 0.2f;
+                    groundedTimer = 0.1f;
+                    changed = true;
                 }
             }
+            if (!changed)
+                isGrounded = false;
         }
     }
 
