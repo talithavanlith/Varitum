@@ -23748,6 +23748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1235688728}
   - component: {fileID: 1235688729}
+  - component: {fileID: 1235688730}
   m_Layer: 0
   m_Name: Spikes 2
   m_TagString: Spikes
@@ -23841,6 +23842,27 @@ EdgeCollider2D:
   - {x: 11.314966, y: 5.297842}
   - {x: 11.349024, y: 3.470707}
   - {x: 11.444948, y: 2.2993755}
+--- !u!50 &1235688730
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235688727}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1240535137
 GameObject:
   m_ObjectHideFlags: 0
@@ -26630,6 +26652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1564754966}
   - component: {fileID: 1564754967}
+  - component: {fileID: 1564754968}
   m_Layer: 0
   m_Name: Spikes 3
   m_TagString: Spikes
@@ -26724,6 +26747,27 @@ EdgeCollider2D:
   - {x: 12.780037, y: 5.60989}
   - {x: 13.688484, y: 1.8672953}
   - {x: 13.950752, y: 3.0569859}
+--- !u!50 &1564754968
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564754965}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1588330482
 GameObject:
   m_ObjectHideFlags: 0
@@ -29529,6 +29573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1938161144}
   - component: {fileID: 1938161145}
+  - component: {fileID: 1938161146}
   m_Layer: 0
   m_Name: Spikes 1
   m_TagString: Spikes
@@ -29608,6 +29653,27 @@ EdgeCollider2D:
   - {x: 3.3953848, y: 2.4731076}
   - {x: 3.7490873, y: 1.4003638}
   - {x: 3.659608, y: -0.4113121}
+--- !u!50 &1938161146
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938161143}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &1980497694
 PrefabInstance:
   m_ObjectHideFlags: 0
