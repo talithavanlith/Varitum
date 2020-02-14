@@ -14,7 +14,7 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponentInParent<playerController>() && collision.GetComponentInParent<playerController>().CompareTag("Player"))
+        if (collision.GetComponentInParent<playerController>() && collision.GetComponentInParent<playerController>().CompareTag("Player") && collision.GetComponentInParent<playerController>().isDead())
         {
             if (transform.position.x > GameManager.GetCheckpointPosition().x + 1f)
             {
