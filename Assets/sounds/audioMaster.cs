@@ -7,10 +7,11 @@ public class audioMaster : MonoBehaviour
     public  AudioSource audioSource;
 
     public AudioClip shot;
-    public AudioClip jump;
+   // public AudioClip jump;
     public AudioClip walk;
     public AudioClip land;
-    
+    public AudioClip die;
+    public AudioClip blood;
 
  
     public AudioClip[] clips;
@@ -48,5 +49,16 @@ public class audioMaster : MonoBehaviour
     {
         audioSource.volume = 0.25f;
         audioSource.PlayOneShot(land);
+    }
+
+    public void playdie()
+    {
+        audioSource.volume = 0.5f;
+        audioSource.PlayOneShot(die);
+    }
+    public void playblood()
+    {
+        audioSource.volume = 1f;
+        audioSource.PlayOneShot(blood);
     }
 }

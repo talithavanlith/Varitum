@@ -1,34 +1,27 @@
 ﻿<Properties StartupConfiguration="{A77DEB61-50BA-3D2B-BA85-CD07C2DB2C66}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Beta_player/playerController.cs">
     <Files>
-      <File FileName="Assets/Menu/MainMenuController.cs" Line="1" Column="1" NotebookId="1" IsPinned="True" />
-      <File FileName="Assets/Beta_player/Animations.cs" NotebookId="1" />
-      <File FileName="Assets/Scripts/Mushroom_controller.cs" Line="49" Column="1" NotebookId="1" />
-      <File FileName="Assets/sounds/audioMaster.cs" Line="36" Column="11" NotebookId="1" />
-      <File FileName="Assets/Beta_player/playerController.cs" Line="197" Column="9" NotebookId="1" />
-      <File FileName="Assets/sounds/rocket_audio.cs" Line="63" Column="48" NotebookId="1" />
-      <File FileName="Assets/sounds/rocket_trigger.cs" Line="23" Column="28" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="52" Column="1" NotebookId="1" />
+      <File FileName="Assets/Menu/MainMenuController.cs" Line="61" Column="1" IsPinned="True" />
+      <File FileName="Assets/Beta_player/Animations.cs" Line="66" Column="35" />
+      <File FileName="Assets/sounds/audioMaster.cs" Line="36" Column="11" />
+      <File FileName="Assets/Beta_player/playerController.cs" Line="195" Column="4" />
+      <File FileName="Assets/Scripts/Mushroom_controller.cs" Line="54" Column="1" />
+      <File FileName="Assets/sounds/rocket_audio.cs" Line="54" Column="34" />
+      <File FileName="Assets/sounds/rocket_trigger.cs" Line="23" Column="28" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="87" Column="1" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1704" Y="51" Width="758" Height="918">
-        <Files>
-          <File FileName="Assets/Scripts/GravityShot.cs" Line="59" Column="31" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Demo" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="animations" expanded="True" />
-              <Node name="Beta_player" expanded="True" />
+              <Node name="Beta_player" expanded="True">
+                <Node name="playerController.cs" selected="True" />
+              </Node>
               <Node name="Menu" expanded="True" />
               <Node name="player" expanded="True" />
-              <Node name="Scripts" expanded="True">
-                <Node name="GameManager.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
               <Node name="sounds" expanded="True" />
             </Node>
           </Node>

@@ -8730,7 +8730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 700300528}
-  closedoor: {fileID: 8300000, guid: b4b254545eab741ce8267b1033084075, type: 3}
+  closedoor: {fileID: 8300000, guid: 3ec85172d2a1f49a0a31f3f762535d01, type: 3}
   rocket_lauch: {fileID: 8300000, guid: bc5ef636a167c412fbe7ac8daa868146, type: 3}
   Animator: {fileID: 700300526}
   BoxCollider2D: {fileID: 188890028}
@@ -24885,6 +24885,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1254445956, guid: 3e9dcc8a3e0b88346a5d374b93baffb2, type: 3}
+      propertyPath: die
+      value: 
+      objectReference: {fileID: 8300000, guid: 26ca136aea4834249acd5e8ea55ce5ab, type: 3}
+    - target: {fileID: 1254445956, guid: 3e9dcc8a3e0b88346a5d374b93baffb2, type: 3}
+      propertyPath: blood
+      value: 
+      objectReference: {fileID: 8300000, guid: c27657a543cfd4ac2bb5477e986e5fad, type: 3}
     - target: {fileID: 1877658497559649204, guid: 3e9dcc8a3e0b88346a5d374b93baffb2,
         type: 3}
       propertyPath: m_TagString
@@ -26128,6 +26136,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5034.458
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473436813585849298, guid: d95cbeeff1f284d248f66de5286b0f12,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473436813585849298, guid: d95cbeeff1f284d248f66de5286b0f12,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].time
+      value: 0.5315328
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473436813585849298, guid: d95cbeeff1f284d248f66de5286b0f12,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].value
+      value: 0.04647827
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473436813585849298, guid: d95cbeeff1f284d248f66de5286b0f12,
+        type: 3}
+      propertyPath: DopplerLevel
+      value: 1.56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95cbeeff1f284d248f66de5286b0f12, type: 3}
