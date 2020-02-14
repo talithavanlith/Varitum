@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
 
         audio.mute = !soundEnabled;
         bgMusic.mute = !musicEnabled;
+
+        if (!inPlay)
+            currentCheckpoint = new Vector3(3.75f, 0f);
     }
 
     public static void SetCheckpointPosition(Vector3 position, int checkpointNum)
