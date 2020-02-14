@@ -16,7 +16,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (collision.GetComponentInParent<playerController>() && collision.GetComponentInParent<playerController>().CompareTag("Player"))
         {
-            if (transform.position.x > GameManager.GetCheckpointPosition().x + 1f)
+            if (GameManager.soundEnabled && transform.position.x > GameManager.GetCheckpointPosition().x + 1f)
             {
                 audioSource.Play();
                 audioSource.volume = 0.15f;

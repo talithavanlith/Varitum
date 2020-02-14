@@ -33,6 +33,8 @@ public class rocket_audio : MonoBehaviour
 
     private void Update()
     {
+        audioSource.mute = !GameManager.soundEnabled;
+
         if (leaving && !gameEnded)
         {
             if (Camera.main.transform.localPosition.x < 3)

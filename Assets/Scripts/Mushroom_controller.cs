@@ -23,6 +23,7 @@ public class Mushroom_controller : MonoBehaviour
     void Update()
     {
         //blood.Play();
+        audioSource.mute = !GameManager.soundEnabled;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

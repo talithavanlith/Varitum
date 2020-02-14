@@ -21,7 +21,6 @@ public class Vine : MonoBehaviour
         InanimateObject obj = collision.gameObject.GetComponent<InanimateObject>();
         if (obj)
         {
-            Debug.Log("AAAA");
             animator.SetBool("attact", false);
         }
 
@@ -30,6 +29,11 @@ public class Vine : MonoBehaviour
             playerController player = collision.gameObject.GetComponent<playerController>();
             player.die();
         }
+    }
+
+    private void Update()
+    {
+        AudioSource.mute = !GameManager.soundEnabled;
     }
 
     private void OnCollisionExit2D(Collision2D collision)

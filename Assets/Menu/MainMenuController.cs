@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MainMenuController : MonoBehaviour
     private bool menuExit;
 
     public Canvas menuCanvas, settingsCanvas;
+
+    public Toggle toggleSound, toggleMusic;
 
     void Start()
     {
@@ -38,23 +41,43 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayClicked()
     {
-        Debug.Log("PLAY GAME");
         menuExit = true;
         StartCoroutine("DeferExit");
     }
 
     public void SettingsClicked()
     {
-        Debug.Log("SETTINGS");
+        toggleSound.isOn = GameManager.soundEnabled;
+        toggleMusic.isOn = GameManager.musicEnabled;
+
+        menuCanvas.gameObject.SetActive(false);
+        settingsCanvas.gameObject.SetActive(true);
     }
 
     IEnumerator DeferExit()
     {
         yield return new WaitForSeconds(2);
 
-        Debug.Log("LOADED!");
-
         GameManager.SpawnPlayer();
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void SettingsBackClicked()
+    {
+        menuCanvas.gameObject.SetActive(true);
+        settingsCanvas.gameObject.SetActive(false);
+    }
+
+
+    public void SettingsToggleSoundChanged()
+    {
+        //toggleSound.GetComponentInChildren<Image>().color = GameManager.soundEnabled ? toggleColor : Color.white;
+        GameManager.SetSound(toggleSound.isOn);
+    }
+
+    public void SettingsToggleMusicChanged()
+    {
+        //toggleMusic.GetComponentInChildren<Image>().color = GameManager.musicEnabled ? toggleColor : Color.white;
+        GameManager.SetMusic(toggleMusic.isOn);
     }
 }
